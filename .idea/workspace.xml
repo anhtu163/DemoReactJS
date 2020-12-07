@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0ba919b-76f6-4fd7-8028-6acb0c70185b" name="Default Changelist" comment="" />
+    <list default="true" id="d0ba919b-76f6-4fd7-8028-6acb0c70185b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Component/Signin.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Signin.container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Reducer/Reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Reducer/Signin.reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Router/Root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constrant/contrant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constrant/contrant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Root.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/Signin.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,12 +22,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lJHaFP9hWgDYpecDYHeGdiHoFh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -26,6 +40,12 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anhtu\WebstormProjects\demo-reactjs\src\Router" />
+      <recent name="C:\Users\anhtu\WebstormProjects\demo-reactjs\src\Component" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -50,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607308335579</updated>
-      <workItem from="1607308336695" duration="505000" />
+      <workItem from="1607308336695" duration="3980000" />
     </task>
     <servers />
   </component>
@@ -67,5 +87,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
