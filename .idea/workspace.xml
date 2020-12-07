@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0ba919b-76f6-4fd7-8028-6acb0c70185b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Component/Signin.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Signin.container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Reducer/Reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Reducer/Signin.reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Router/Root.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constrant/contrant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constrant/contrant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Root.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/Signin.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Signin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Signin.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Router/Root.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router/Root.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +65,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607308335579</updated>
-      <workItem from="1607308336695" duration="3980000" />
+      <workItem from="1607308336695" duration="5139000" />
     </task>
+    <task id="LOCAL-00001" summary="Config base project file">
+      <created>1607313854950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607313854950</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +93,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Config base project file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Config base project file" />
   </component>
 </project>

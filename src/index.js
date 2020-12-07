@@ -7,11 +7,12 @@ import thunk from 'redux-thunk';
 import {applyMiddleware, createStore} from "redux";
 import Reducer from "./Reducer/Reducer";
 import {Provider} from "react-redux";
+import Container from "./Container/Container";
 const store = createStore( Reducer , applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Container />
   </Provider>,
   document.getElementById('root')
 );
