@@ -1,0 +1,41 @@
+.menu {
+    background-color: orangered !important;
+    width: 100%;
+}
+.branch{
+    width: 100%;
+}
+.right-menu{
+
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.search {
+    display: flex;
+    background-color: pink;
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+}
+
+.searchIcon {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+
+}
+
+.inputRoot{
+
+}
+
+.inputInput{
+    padding: 2px;
+    margin-left: 30px;
+    width: 100%;
+}

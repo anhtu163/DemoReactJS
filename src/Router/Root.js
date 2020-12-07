@@ -1,6 +1,6 @@
 import {Route, BrowserRouter , Switch} from 'react-router-dom';
 import SigninContainer from "../Container/Signin.container";
-import App from "../App";
+import HomeContainer from "../Container/Home.container";
 
 const Root = () => (
     <BrowserRouter>
@@ -9,7 +9,7 @@ const Root = () => (
                 <SigninContainer />
             </Route>
             <Route  path="/">
-                <App />
+                <HomeContainer />
             </Route>
 
         </Switch>
