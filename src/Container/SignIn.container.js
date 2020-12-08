@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import Signin from "../Component/Signin.component";
+import Signin from "../Component/SignIn.component";
 import * as actions from '../Action/Signin.action';
 
 const mapStateToProps = (state) =>{
@@ -13,9 +13,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const SigninContainer = connect (
+const SignInContainer = connect (
     mapStateToProps,
     mapDispatchToProps,
 )(Signin);
 
-export default  SigninContainer;
+export default  SignInContainer;

@@ -1,9 +1,12 @@
 import React from 'react';
 
-import NavMenu from './Menu.component';
+import NavMenu from '../NavMenu.component';
 import Banner from "./Banner.component";
-import '../../Style/Home.style.css';
+import '../../Style/Home/Home.style.css';
+import '../../Style/Container.style.css';
 import ProductCard from "./ProductCard.component";
+import * as data from '../../Constrant/datademo';
+import Pagination from '@material-ui/lab/Pagination';
 
 
 
@@ -12,19 +15,20 @@ import ProductCard from "./ProductCard.component";
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.list = [1,2,3,4,5,6,7,8]
+        this.list = data.list;
     }
 
     render() {
 
         return (
             <div className="container">
-                <NavMenu/>
                 <div className="product-list">
                     {/*<Banner/>*/}
-                    {this.list.map(e => <ProductCard />)}
+                    {this.list.map(e => <ProductCard data = {e} />)}
                 </div>
-
+                <div className="page-list">
+                    <Pagination className="pages" count={5} variant="outlined" shape="rounded" color="secondary"/>
+                </div>
             </div>
 
         )

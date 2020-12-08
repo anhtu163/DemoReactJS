@@ -1,14 +1,11 @@
 import * as constant from "../Constrant/contrant";
 
 const initialState = {
-    username: '',
-    password: '',
-    token: '',
-    err: '',
-    isLogin: false,
+    productsList: [],
+    pagesList: 5,
 };
 
-const SigninReducer = (state = initialState, actions) => {
+const HomeReducer = (state = initialState, actions) => {
     switch (actions.type) {
         case constant.SIGN_IN:
 
@@ -18,4 +15,4 @@ const SigninReducer = (state = initialState, actions) => {
     }
 };
 
-export default SigninReducer;
+export default HomeReducer;

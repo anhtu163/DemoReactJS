@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,6 +9,8 @@ import {red} from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from "@material-ui/core/Button";
+import { Redirect } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,34 +30,39 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ProductCard() {
+export default function ProductCard(props) {
     const classes = useStyles();
+    const data = props.data;
 
+    const handleClick = (id) => {
+        window.location = `/product-detail&id=${id}`;
+    }
     return (
-        <Card className={classes.root}>
+        <div >
+            <Card className={classes.root} >
 
-            <CardMedia
-                className={classes.media}
-                image="https://abv.edu.vn/wp-content/uploads/2017/05/chup-anh-san-pham-dep.jpg"
-                title="Paella dish"
-            />
-            <CardHeader
-
-                title="Chăm sóc da nhạy cảm"
-                subheader="Giá tiền: 200.000 VND"
-            />
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-                <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
-                    <Button style={{ color: 'white',  backgroundColor: 'orangered'}}>Thêm vào giỏ hàng</Button>
+                <CardMedia
+                    className={classes.media}
+                    image={data.image}
+                    title="Paella dish"
+                />
+                <div style={{margin: '15px'}}>
+                    <h3 style={{margin: '0'}}>{data.name}</h3>
+                    <h2 style={{color: 'orangered', margin: '0'}}>{data.price} VND</h2>
                 </div>
+                <CardActions disableSpacing>
+                    <IconButton aria-label="add to favorites">
+                        <FavoriteIcon/>
+                    </IconButton>
+                    <IconButton aria-label="share">
+                        <ShareIcon/>
+                    </IconButton>
+                    <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
+                        <Button style={{color: 'white', backgroundColor: 'orangered'}} >Thêm vào giỏ hàng</Button>
+                    </div>
 
-            </CardActions>
-        </Card>
+                </CardActions>
+            </Card>
+        </div>
     );
 }

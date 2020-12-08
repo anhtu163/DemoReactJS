@@ -6,7 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import '../Style/Signin.style.css';
+import '../Style/SignIn.style.css';
 import { Redirect } from "react-router-dom";
 
 export default class Signin extends React.Component {

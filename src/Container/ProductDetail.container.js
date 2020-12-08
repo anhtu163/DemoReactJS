@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import Signin from "../Component/SignIn.component";
 import * as actions from '../Action/Signin.action';
 import Home from "../Component/Home/Home.component";
+import ProductDetail from "../Component/Product/ProductDetail.component";
 
 const mapStateToProps = (state) =>{
     return{
@@ -14,9 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const HomeContainer = connect (
+const ProductDetailContainer = connect (
     mapStateToProps,
     mapDispatchToProps,
-)(Home);
+)(ProductDetail);
 
-export default  HomeContainer;
+export default  ProductDetailContainer;

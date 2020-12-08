@@ -1,19 +1,29 @@
 import {Route, BrowserRouter , Switch} from 'react-router-dom';
-import SigninContainer from "../Container/Signin.container";
+import SignInContainer from "../Container/SignIn.container";
 import HomeContainer from "../Container/Home.container";
+import ProductDetailContainer from "../Container/ProductDetail.container";
+import NavMenu from "../Component/NavMenu.component";
 
 const Root = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route  path="/signin">
-                <SigninContainer />
-            </Route>
-            <Route  path="/">
-                <HomeContainer />
-            </Route>
+    <div>
+        <NavMenu />
+        <BrowserRouter>
+            <Switch>
+                <Route  path="/signin">
+                    <SignInContainer />
+                </Route>
+                <Route  path="/product-detail&id=:id">
+                    <ProductDetailContainer />
+                </Route>
+                <Route  path="/">
+                    <HomeContainer />
+                </Route>
 
-        </Switch>
-    </BrowserRouter>
+
+            </Switch>
+        </BrowserRouter>
+    </div>
+
 )
 
 

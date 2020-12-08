@@ -10,7 +10,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import '../../Style/NavMenu.style.css';
+import '../Style/NavMenu.style.css';
+import {Badge} from "@material-ui/core";
 
 export default function NavMenu(){
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -30,7 +31,7 @@ export default function NavMenu(){
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" className="branch" >
-                    Xốp Pi
+                    Lazada
                 </Typography>
                 {/*{auth && (*/}
                 <div className="search">
@@ -44,6 +45,7 @@ export default function NavMenu(){
                     />
                 </div>
                 <div className="right-menu">
+
                     <IconButton
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
@@ -51,8 +53,12 @@ export default function NavMenu(){
                         // onClick={handleMenu}
                         color="inherit"
                     >
-                        <ShoppingCart />
+                        <Badge badgeContent={2} max={20} color="primary">
+                            <ShoppingCart/>
+                        </Badge>
+
                     </IconButton>
+
                     <IconButton
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
