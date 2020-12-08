@@ -3,6 +3,7 @@ import SignInContainer from "../Container/SignIn.container";
 import HomeContainer from "../Container/Home.container";
 import ProductDetailContainer from "../Container/ProductDetail.container";
 import NavMenu from "../Component/NavMenu.component";
+import 'fontsource-roboto';
 
 const Root = () => (
     <div>
@@ -12,9 +13,7 @@ const Root = () => (
                 <Route  path="/signin">
                     <SignInContainer />
                 </Route>
-                <Route  path="/product-detail&id=:id">
-                    <ProductDetailContainer />
-                </Route>
+                <Route  path="/product-detail&id=:id" component={ProductDetailContainer} />
                 <Route  path="/">
                     <HomeContainer />
                 </Route>

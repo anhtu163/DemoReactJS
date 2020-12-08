@@ -17,8 +17,11 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 300,
         maxWidth: 300,
         margin: 20,
+
+    },
+    hover: {
         '&:hover': {
-          border: "2px solid orangered",
+            border: "1.5px solid orangered",
         },
     },
     media: {
@@ -35,33 +38,34 @@ export default function ProductCard(props) {
     const data = props.data;
 
     const handleClick = (id) => {
-        window.location = `/product-detail&id=${id}`;
+        window.location.href = `/product-detail&id=${id}`;
     }
     return (
-        <div >
+        <div>
             <Card className={classes.root} >
-
-                <CardMedia
-                    className={classes.media}
-                    image={data.image}
-                    title="Paella dish"
-                />
-                <div style={{margin: '15px'}}>
-                    <h3 style={{margin: '0'}}>{data.name}</h3>
-                    <h2 style={{color: 'orangered', margin: '0'}}>{data.price} VND</h2>
-                </div>
-                <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                        <FavoriteIcon/>
-                    </IconButton>
-                    <IconButton aria-label="share">
-                        <ShareIcon/>
-                    </IconButton>
-                    <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
-                        <Button style={{color: 'white', backgroundColor: 'orangered'}} >Thêm vào giỏ hàng</Button>
+                <div className={classes.hover}>
+                    <CardMedia
+                        className={classes.media}
+                        image={data.image}
+                        title="Paella dish"
+                    />
+                    <div style={{margin: '15px'}}>
+                        <h3 style={{margin: '0'}}>{data.name}</h3>
+                        <h2 style={{color: 'orangered', margin: '0'}}>{data.price} VND</h2>
                     </div>
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="share">
+                            <ShareIcon/>
+                        </IconButton>
+                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
+                            <Button variant="contained" onClick={() => handleClick(data.id)}
+                                    style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
+                            <Button variant="contained" style={{marginLeft: "10px"}} onClick={() => handleClick(data.id)}
+                                    color="primary">buy now</Button>
+                        </div>
 
-                </CardActions>
+                    </CardActions>
+                </div>
             </Card>
         </div>
     );

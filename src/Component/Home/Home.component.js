@@ -22,8 +22,9 @@ export default class Home extends React.Component {
 
         return (
             <div className="container">
+                <Banner/>
+                <div className="line-divide"/>
                 <div className="product-list">
-                    {/*<Banner/>*/}
                     {this.list.map(e => <ProductCard data = {e} />)}
                 </div>
                 <div className="page-list">
