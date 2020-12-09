@@ -50,7 +50,7 @@ export default function NavMenu(){
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
-                        // onClick={handleMenu}
+                        onClick={() => {window.location.href = '/cart'}}
                         color="inherit"
                     >
                         <Badge badgeContent={2} max={20} color="primary">

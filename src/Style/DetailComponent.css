@@ -1,0 +1,22 @@
+.detail-wrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+@media (max-width: 1600px){
+
+    .detail-wrapper{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+}
+
+.detail-image{
+max-width: 500px;
+}
+
+.detail-info{
+
+}
+

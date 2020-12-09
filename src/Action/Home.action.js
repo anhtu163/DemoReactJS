@@ -2,14 +2,14 @@ import * as data from '../Constrant/datademo';
 import * as constant from '../Constrant/constant';
 
 //get all products
-function onClickGetAllProduct(){
+function onClickGetAllProduct(item){
     return data.list;
 }
 
-export const getAllProductRequest = () => {
+export const getAllProductRequest = (item) => {
 
     return dispatch => {
-        const res = onClickGetAllProduct();
+        const res = onClickGetAllProduct(item);
         return dispatch(getAllProduct(res));
     }
 
