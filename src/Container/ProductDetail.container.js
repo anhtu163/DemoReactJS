@@ -1,17 +1,17 @@
 import { connect } from "react-redux"
-import Signin from "../Component/SignIn.component";
-import * as actions from '../Action/Signin.action';
-import Home from "../Component/Home/Home.component";
+import * as actions from '../Action/Product.action';
+
 import ProductDetail from "../Component/Product/ProductDetail.component";
+import {getDetailProductRequest} from "../Action/Product.action";
 
 const mapStateToProps = (state) =>{
     return{
-
+        dataDetail : state.ProductDetailReducer.dataDetail,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        getDetailProduct: (id) => dispatch(getDetailProductRequest(id)),
     }
 }
 

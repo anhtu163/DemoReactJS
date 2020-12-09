@@ -30,7 +30,7 @@ export default function NavMenu(){
                 <IconButton edge="start"  color="inherit" aria-label="menu">
                     <MenuIcon />
                 </IconButton>
-                <Typography variant="h6" className="branch" >
+                <Typography variant="h6" className="branch" onClick={()=> window.location.href= '/'}>
                     Bách Hóa Tổng Hợp
                 </Typography>
                 {/*{auth && (*/}

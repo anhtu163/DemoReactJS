@@ -49,15 +49,15 @@ export const list = [
     },
     {
         id: 9,
-        name: "Mức trái cây",
+        name: "Son Lavish H Baby-Korea",
         price: 250000,
-        image: "https://lh3.googleusercontent.com/proxy/upfCA6mhtJBuW5bAW9SNMjCJmZbFAz5rUEiAagxfcNs6KI1PyO9n-VMJArgOJCFE64lJjc6CWgXQBSmI5GQQ1KHzQvyd8ugS9xUSvzqOMxJOH7yJpg"
+        image: "https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1546928942586-21WV3P2ST7XICD6MYYQV/ke17ZwdGBToddI8pDm48kBtpJ0h6oTA_T7DonTC8zFdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIWkiAYz5ghgEgSGJuDQ4e1ZKXpRdhEMT7SgthRpD0vyIKMshLAGzx4R3EDFOm1kBS/49787637_2590738740953034_2806852189832609792_n.jpg"
     },
     {
         id: 10,
         name: "Trà sen",
         price: 50000,
-        image: "https://lh3.googleusercontent.com/proxy/upfCA6mhtJBuW5bAW9SNMjCJmZbFAz5rUEiAagxfcNs6KI1PyO9n-VMJArgOJCFE64lJjc6CWgXQBSmI5GQQ1KHzQvyd8ugS9xUSvzqOMxJOH7yJpg",
+        image: "https://cooftech.com/upload/blogs/images/Cooftech/kinh-nghiem-lam-app-web/chup-anh-san-pham/anh1-chup-anh.jpg",
     },
     {
         id: 11,

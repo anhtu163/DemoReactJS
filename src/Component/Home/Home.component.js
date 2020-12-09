@@ -15,17 +15,23 @@ import Pagination from '@material-ui/lab/Pagination';
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.list = data.list;
+        this.list = [];
+    }
+
+    componentDidMount() {
+        const st = this.props;
+        st.getAllProduct();
     }
 
     render() {
 
+        const st = this.props;
         return (
             <div className="container">
                 <Banner/>
                 <div className="line-divide"/>
                 <div className="product-list">
-                    {this.list.map(e => <ProductCard data = {e} />)}
+                    { st.productsList ?  st.productsList.map(e => <ProductCard data = {e} />) : []}
                 </div>
                 <div className="page-list">
                     <Pagination className="pages" count={5} variant="outlined" shape="rounded" color="secondary"/>

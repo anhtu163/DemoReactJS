@@ -4,20 +4,26 @@
     grid-template-columns: 60% 40%;
 
 }
+.bannerRight{
+    display: grid;
+    grid-template-rows: 50% 50%;
 
-.banner-left{
+}
+.bannerRight div img{
+    margin-left: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerLeft{
     margin-left: -3px;
     margin-right: 25px;
     width: 100%;
-    height: 330px;
 }
 
-.banner-right{
-    display: grid;
-    grid-template-rows: 50% 50%;
+.bannerLeft img{
+    width: 100%;
     height: 100%;
 }
-.banner-right div img{
-    margin-left: 2px;
-    width: 100%;
-}
+
+

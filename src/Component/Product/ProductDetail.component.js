@@ -12,23 +12,28 @@ export default class ProductDetail extends React.Component{
     constructor(props) {
         super(props);
         const prs = this.props;
-        this.list = data.list;
         this.id = prs.match.params.id;
         this.state = {
             count: 0,
             value: 2,
         }
+        this.data = {}
+    }
+
+    componentDidMount() {
+        const st = this.props;
+        st.getDetailProduct(this.id);
     }
 
     render() {
-        const data = this.list.filter (e => e.id === parseInt(this.id,10))[0];
-        console.log(this.state.count)
+        //const data = this.list.filter (e => e.id === parseInt(this.id,10))[0];
+        const st = this.props;
         return(
             <div className="container">
                 <div className="bg">
                     <div className="grid-1">
                         <div className="image">
-                            <img src={data.image}/>
+                            <img src={st.dataDetail.image}/>
                         </div>
                         <div className="info">
                             <Typography variant="h5" component="h2">
@@ -36,7 +41,7 @@ export default class ProductDetail extends React.Component{
                                 icon={<CheckIcon style={{color: "white"}}/>}
                                 label="Bán chạy"
                                 style={{backgroundColor: "orangered", color: "white", marginRight: "20px"}}/>
-                                {data.name}
+                                {st.dataDetail.name}
                             </Typography>
                             <div style={{display: "flex"}}>
                                 <Rating
@@ -50,11 +55,11 @@ export default class ProductDetail extends React.Component{
                                 <p style={{marginLeft: "20px", marginTop: "11px"}}>{this.state.value} lượt đánh giá</p>
                             </div>
                             <div className="line-divide"/>
-                            <Typography style={{marginTop: "20px", marginBottom: "20px"}} variant="h4" component="h2" color="secondary">₫{data.price}</Typography>
+                            <Typography style={{marginTop: "20px", marginBottom: "20px"}} variant="h4" component="h2" color="secondary">₫{st.dataDetail.price}</Typography>
                             <div className="product-number">
 
                                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                                    <Button onClick={()=> { this.setState({count: this.state.count - 1 })}}><h2>-</h2></Button>
+                                    <Button  onClick={()=> { this.setState({count: this.state.count - 1 })}}><h2>-</h2></Button>
                                     <Button>{this.state.count}</Button>
                                     <Button onClick={()=> { this.setState({count: this.state.count + 1 })}}><h2>+</h2></Button>
                                 </ButtonGroup>
