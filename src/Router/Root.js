@@ -1,6 +1,5 @@
 import {Route, BrowserRouter , Switch} from 'react-router-dom';
-import SignInContainer from "../Container/SignIn.container";
-import HomeContainer from "../Container/Home.container";
+import CartContainer from "../Container/Cart.container";
 import ProductDetailContainer from "../Container/ProductDetail.container";
 import NavMenu from "../Component/NavMenu.component";
 import 'fontsource-roboto';
@@ -14,6 +13,9 @@ const Root = () => (
                     <SignInContainer />
                 </Route>
                 <Route  path="/product-detail&id=:id" component={ProductDetailContainer} />
+                <Route  path="/cart">
+                     <CartContainer />
+                </Route>
                 <Route  path="/">
                     <HomeContainer />
                 </Route>
@@ -22,7 +24,6 @@ const Root = () => (
             </Switch>
         </BrowserRouter>
     </div>
-
 )
 
 

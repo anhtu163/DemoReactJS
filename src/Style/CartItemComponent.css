@@ -1,0 +1,14 @@
+.cart-item-wrapper{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+.cart-image{
+    width: 200px;
+    margin-right: 10px;
+}
+#product-left{
+    display: flex;
+}
+

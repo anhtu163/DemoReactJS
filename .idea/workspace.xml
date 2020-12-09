@@ -24,56 +24,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="ProjectId" id="1lJHaFP9hWgDYpecDYHeGdiHoFh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1lMGcvBaviqzhyYBP9W7FTcRf9x" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\anhtu\WebstormProjects\demo-reactjs\src\Component" />
-      <recent name="C:\Users\anhtu\WebstormProjects\demo-reactjs\src\Style\Home" />
-      <recent name="C:\Users\anhtu\WebstormProjects\demo-reactjs\src\Component\Home" />
-      <recent name="C:\Users\anhtu\WebstormProjects\demo-reactjs\src\Router" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vuvvo\WebstormProjects\DemoReactJS\src" />
+      <recent name="C:\Users\vuvvo\WebstormProjects\DemoReactJS\src\Style" />
+      <recent name="C:\Users\vuvvo\WebstormProjects\DemoReactJS" />
+      <recent name="C:\Users\vuvvo\WebstormProjects\DemoReactJS\src\Container" />
+      <recent name="C:\Users\vuvvo\WebstormProjects\DemoReactJS\src\Component" />
     </key>
-  </component>
-  <component name="RunManager" selected="npm.npm start">
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
-      <method v="2" />
-    </configuration>
-    <configuration name="npm start" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vuvvo\WebstormProjects\DemoReactJS\src\Component\Cart" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d0ba919b-76f6-4fd7-8028-6acb0c70185b" name="Default Changelist" comment="" />
-      <created>1607308335579</created>
+      <changelist id="e298a0df-03d8-4747-8b86-742e1fc89b4e" name="Default Changelist" comment="" />
+      <created>1607399632290</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607308335579</updated>
@@ -120,7 +114,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="vu" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
