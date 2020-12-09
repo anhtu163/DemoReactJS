@@ -5,10 +5,7 @@ import SignInContainer from "../Container/SignIn.container";
 import HomeContainer from "../Container/Home.container";
 import NavMenu from "../Component/NavMenu.component";
 import 'fontsource-roboto';
-import SignInContainer from "../Container/SignIn.container";
-import HomeContainer from "../Container/Home.container";
 import Checkout from "../Component/Checkout/Checkout.component";
-import Component from "../Component/Component";
 
 const Root = () => (
     <div>

@@ -30,8 +30,3 @@
     display: flex;
     justify-content: center;
 }
-
-.line-divide{
-    margin: 5px 0;
-    border: 1px orangered solid;
-}

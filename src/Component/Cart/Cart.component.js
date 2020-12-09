@@ -3,7 +3,7 @@ import CartList from "./CartList.component";
 import Subtotal from "./Subtotal.component";
 import {Card} from "@material-ui/core";
 import "../../Style/Container.style.css";
-import '../../Style/CartComponent.css'
+import '../../Style/Cart/CartComponent.css'
 
 export default class Cart extends React.Component {
 
