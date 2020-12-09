@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0ba919b-76f6-4fd7-8028-6acb0c70185b" name="Default Changelist" comment="refactor code follow redux">
-      <change afterPath="$PROJECT_DIR$/src/Action/Home.action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Action/Product.action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constrant/constant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Reducer/ProductDetail.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Home/Banner.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Home/Banner.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Home/Home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Home/Home.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Home/ProductCard.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Home/ProductCard.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/NavMenu.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/NavMenu.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Product/ProductDetail.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Product/ProductDetail.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constrant/contrant.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constrant/datademo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constrant/datademo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Home.container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Home.container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/ProductDetail.container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/ProductDetail.container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reducer/Home.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reducer/Home.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reducer/Reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reducer/Reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reducer/SignIn.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reducer/SignIn.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Style/Container.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style/Container.style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Style/Home/Banner.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style/Home/Banner.style.css" afterDir="false" />
-    </list>
+    <list default="true" id="d0ba919b-76f6-4fd7-8028-6acb0c70185b" name="Default Changelist" comment="refactor code follow redux" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,6 +66,7 @@
       <workItem from="1607394017088" duration="23602000" />
       <workItem from="1607481103935" duration="7883000" />
       <workItem from="1607498748539" duration="481000" />
+      <workItem from="1607499360469" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="Config base project file">
       <created>1607313854950</created>
@@ -135,7 +114,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
