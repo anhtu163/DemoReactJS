@@ -1,0 +1,44 @@
+.bg {
+    background-color: white;
+    padding: 20px;
+}
+
+.grid-1{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.grid-1 img{
+    width: 600px;
+}
+
+@media screen and (max-width: 1800px){
+    .grid-1{
+        display: grid;
+        grid-template-columns: 100%;
+        margin: auto;
+    }
+    .grid-1 img{
+        max-width: 800px;
+    }
+}
+
+.line-divide{
+    margin: 5px 0;
+    border: 1px orangered solid;
+}
+
+.detail{
+    margin-top: 20px;
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.coupon{
+    margin-top: 20px;
+}
+.product-number{
+    display: flex;
+    margin: 20px 0;
+    height: 40px;
+}

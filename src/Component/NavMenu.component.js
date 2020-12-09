@@ -31,7 +31,7 @@ export default function NavMenu(){
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" className="branch" >
-                    Lazada
+                    Bách Hóa Tổng Hợp
                 </Typography>
                 {/*{auth && (*/}
                 <div className="search">
