@@ -58,7 +58,12 @@ export default class ProductDetail extends React.Component{
                             <div className="product-number">
 
                                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                                    <Button  onClick={()=> { this.setState({count: this.state.count - 1 })}}><h2>-</h2></Button>
+                                    <Button  onClick={()=> {
+                                        if (this.state.count > 0) {
+                                            this.setState({count: this.state.count - 1})
+                                        }
+                                    }
+                                    }><h2>-</h2></Button>
                                     <Button>{this.state.count}</Button>
                                     <Button onClick={()=> { this.setState({count: this.state.count + 1 })}}><h2>+</h2></Button>
                                 </ButtonGroup>
@@ -66,7 +71,6 @@ export default class ProductDetail extends React.Component{
                             <Button variant="contained"
                                     style={{backgroundColor: "orangered", color: "white", marginRight: "20px"}}>Add to
                                 Cart</Button>
-                            <Button variant="contained" color="primary">Buy now</Button>
                         </div>
                     </div>
                     <div className="grid-2">

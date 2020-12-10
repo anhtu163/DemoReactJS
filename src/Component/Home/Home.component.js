@@ -19,6 +19,7 @@ export default class Home extends React.Component {
     componentDidMount() {
         const st = this.props;
         st.getAllProduct();
+        st.getCartItems();
     }
 
     render() {
