@@ -1,0 +1,13 @@
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 200px;
+    background-color: orangered;
+    color: white;
+    padding: 20px;
+}
+
+.footer div{
+    display: flex;
+    justify-content: center;
+}

@@ -32,14 +32,14 @@ const useStyles = makeStyles(() => ({
 export default function ProductCard(props) {
     const classes = useStyles();
     const data = props.data;
-    console.log(data);
     const addToCart = props.st.addToCart;
     const handleClick = (id) => {
         window.location.href = `/product-detail&id=${id}`;
     }
+    console.log(localStorage.getItem('cartItems'))
     return (
         <div>
-            <Card className={classes.root} >
+            <Card className={classes.root} onClick={() => handleClick(data.id)}>
                 <div className={classes.hover}>
                     <CardMedia
                         className={classes.media}
@@ -57,7 +57,7 @@ export default function ProductCard(props) {
                         <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
                             <Button variant="contained" onClick={() => addToCart(data)}
                                     style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
-                            <Button variant="contained" style={{marginLeft: "10px"}} onClick={() => handleClick(data.id)}
+                            <Button variant="contained" style={{marginLeft: "10px"}}
                                     color="primary">buy now</Button>
                         </div>
 

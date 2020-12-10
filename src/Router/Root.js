@@ -7,6 +7,7 @@ import HomeContainer from "../Container/Home.container";
 import 'fontsource-roboto';
 import Checkout from "../Component/Checkout/Checkout.component";
 import NavMenuContainer from "../Container/NavMenu.container";
+import Footer from "../Component/Footer.component";
 
 const Root = () => (
     <div>
@@ -30,6 +31,7 @@ const Root = () => (
                 </Route>
 
             </Switch>
+            <Footer />
         </BrowserRouter>
     </div>
 )

@@ -20,3 +20,8 @@ export const signIn = (username, password, res) => ({
         res
     }
 })
+
+//log out
+export const signOut = () => ({
+    type: constant.SIGN_OUT
+})

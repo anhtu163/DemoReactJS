@@ -40,11 +40,11 @@ export default class NavMenu extends React.Component{
         const handleClickCart = () => {
             if(st.isLogin)
             {
-                return (<Redirect to="./cart" />);
-                //window.location.href = '/cart'
+                //return (<Redirect to="./cart" />);
+                window.location.href = '/cart'
             }else{
-                return (<Redirect to="./signin" />);
-                //window.location.href='/signin'
+                //return (<Redirect to="./signin" />);
+                window.location.href='/signin'
             }
 
         };
@@ -114,6 +114,7 @@ export default class NavMenu extends React.Component{
                                 >
                                     <MenuItem>Profile</MenuItem>
                                     <MenuItem>My account</MenuItem>
+                                    <MenuItem onClick={()=> {st.signOut(); console.log(st.isLogin)}}>Sign out</MenuItem>
                                 </Menu>
                             </div>): ( <div style={{display: 'flex', alignItems: 'center'}}>
                                 <Button onClick={()=> {window.location.href='/signin'}} variant="contained" style={{color: 'white', backgroundColor: 'orangered', margin: 'auto'}}>Sign In</Button>

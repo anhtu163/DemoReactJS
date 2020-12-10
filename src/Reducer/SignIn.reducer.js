@@ -21,6 +21,9 @@ const SignInReducer = (state = initialState, actions) => {
             }
 
             return st;
+        case constant.SIGN_OUT:
+            console.log(initialState);
+            return initialState;
         default:
             return state;
     }

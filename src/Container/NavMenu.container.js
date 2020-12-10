@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import NavMenu from "../Component/NavMenu.component";
 import {withRouter} from 'react-router-dom';
+import {signOut} from "../Action/Signin.action";
 
 const mapStateToProps = (state) =>{
     return{
@@ -10,6 +11,7 @@ const mapStateToProps = (state) =>{
 }
 const mapDispatchToProps = (dispatch) => {
     return {
+        signOut: () => {dispatch(signOut())}
     }
 }
 

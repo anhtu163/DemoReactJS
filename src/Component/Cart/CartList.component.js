@@ -11,8 +11,6 @@ export default class CartList extends React.Component {
         return(
             <div>
                <CartItem/>
-               <CartItem/>
-               <CartItem/>
             </div>
         )
     }

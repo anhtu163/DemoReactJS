@@ -16,9 +16,9 @@ export default class Subtotal extends React.Component {
                 <Button
                     size="large"
                     variant="contained"
-                    color="primary"
+                    style={{color: 'white', backgroundColor: 'orangered'}}
                     startIcon={<AddShoppingCartIcon />}>
-                    Checkout
+                    Check out
                 </Button>
             </div>
         )
