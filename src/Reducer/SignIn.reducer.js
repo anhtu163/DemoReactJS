@@ -1,4 +1,4 @@
-import * as constant from "../Constrant/constant";
+import * as constant from "../Constant/constant";
 
 const initialState = {
     username: '',

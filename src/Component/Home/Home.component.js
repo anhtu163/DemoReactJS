@@ -1,11 +1,9 @@
 import React from 'react';
 
-import NavMenu from '../NavMenu.component';
 import Banner from "./Banner.component";
 import '../../Style/Home/Home.style.css';
 import '../../Style/Container.style.css';
 import ProductCard from "./ProductCard.component";
-import * as data from '../../Constrant/datademo';
 import Pagination from '@material-ui/lab/Pagination';
 
 
@@ -31,7 +29,7 @@ export default class Home extends React.Component {
                 <Banner/>
                 <div className="line-divide"/>
                 <div className="product-list">
-                    { st.productsList ?  st.productsList.map(e => <ProductCard data = {e} />) : []}
+                    { st.productsList ?  st.productsList.map(e => <ProductCard st={st} data = {e} />) : []}
                 </div>
                 <div className="page-list">
                     <Pagination className="pages" count={5} variant="outlined" shape="rounded" color="secondary"/>
