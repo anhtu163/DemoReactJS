@@ -1,17 +1,14 @@
 import React from 'react';
 import CartItem from "./CartItem.component";
+import ProductCard from "../Home/ProductCard.component";
 
-export default class CartList extends React.Component {
+export default function CartList (props) {
 
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
-        return(
+        return (
             <div>
-               <CartItem/>
+                <CartItem/>
+                { props.cartItems ? props.cartItems.map(data => <CartItem key={data.id} st={props.st} data={data}/>) : []}
             </div>
         )
-    }
 }

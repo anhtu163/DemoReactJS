@@ -1,5 +1,4 @@
-import '../Constant/constant'
-import {ADD_TO_CART, REMOVE_FROM_CART} from "../Constant/constant";
+import * as constant from '../Constant/constant'
 
 //ADD TO CART
 
@@ -40,16 +39,41 @@ export const addToCartRequest = (product) => {
 }
 
 //dispatch
-export const addToCart = (list) => ({
-    type: ADD_TO_CART,
-    payload: list
+export const addToCart = (res) => ({
+    type: constant.ADD_TO_CART,
+    payload: {
+        res,
+    }
 })
 
 
 //REMOVE FROM CART
 
-export const removeFromCart = (list) => ({
-    type: REMOVE_FROM_CART,
-    payload: list
+export const removeFromCart = (res) => ({
+    type: constant.REMOVE_FROM_CART,
+    payload: {
+        res,
+    }
 })
 
+//GET CART ITEMS
+//props getCartItemsRequest duoc goi, sau khi duoc goi thi goi toi fetchCartItem de lay data
+//sau khi co data goi dispatch truyen action kem data vua nhan duoc cho reducer
+function fetchCartItems(){
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    return cartItems;
+}
+
+export const getCartItemsRequest = () => {
+    return dispatch => {
+        const cartItems = fetchCartItems();
+        return dispatch(getCartItems(cartItems));
+    }
+}
+
+export const getCartItems = res =>({
+   type: constant.GET_CART_ITEMS,
+    payload: {
+       res
+    }
+});

@@ -1,13 +1,21 @@
-import * as constraint from '../Constant/constant'
+import * as constant from '../Constant/constant'
 
-const CartReducer = (state = {
-    cartItems: localStorage.getItem("cartItems") || "[]"
-}, action) => {
+const initialState = {
+    cartItems: [],
+}
+
+const CartReducer = (state = initialState, action) => {
     switch (action.type) {
-        case constraint.ADD_TO_CART:
-            return {cartItems: action.payload.cartItems};
-        case constraint.REMOVE_FROM_CART:
-            return {cartItems: action.payload.cartItems};
+        case constant.ADD_TO_CART:
+        case constant.REMOVE_FROM_CART:
+        case constant.GET_CART_ITEMS:
+            const st = {...state};
+            try{
+                st.cartItems = action.payload.res;
+            }catch(e){
+                //
+            }
+            return st;
         default:
             return state;
     }
