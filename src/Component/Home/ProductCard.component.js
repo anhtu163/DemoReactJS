@@ -39,7 +39,7 @@ export default function ProductCard(props) {
     console.log(localStorage.getItem('cartItems'))
     return (
         <div>
-            <Card className={classes.root} onClick={() => handleClick(data.id)}>
+            <Card className={classes.root} >
                 <div className={classes.hover}>
                     <CardMedia
                         className={classes.media}
