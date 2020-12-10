@@ -1,7 +1,7 @@
 export const list = [
     {
         id: 1,
-        name: "Sản phẩm dưỡng da",
+        name: "Sản phẩm dưỡng da ",
         price: 200000,
         image: "https://abv.edu.vn/wp-content/uploads/2017/05/chup-anh-san-pham-dep.jpg"
     },

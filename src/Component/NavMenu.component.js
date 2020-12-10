@@ -80,7 +80,7 @@ export default class NavMenu extends React.Component{
                                 onClick={handleClickCart}
                                 color="inherit"
                             >
-                                <Badge badgeContent={2} max={20} color="primary">
+                                <Badge badgeContent={st.numberTotal} max={20} color="primary">
                                     <ShoppingCart/>
                                 </Badge>
 

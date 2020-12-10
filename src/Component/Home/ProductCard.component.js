@@ -27,6 +27,12 @@ const useStyles = makeStyles(() => ({
     avatar: {
         backgroundColor: red[500],
     },
+    name: {
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        width: '250px',
+    }
 }));
 
 export default function ProductCard(props) {
@@ -47,7 +53,9 @@ export default function ProductCard(props) {
                         title="Paella dish"
                     />
                     <div style={{margin: '15px'}}>
-                        <h3 style={{margin: '0'}}>{data.name}</h3>
+                        <div >
+                            <h3 className={classes.name} style={{margin: '0'}} >{data.name}</h3>
+                        </div>
                         <h2 style={{color: 'orangered', margin: '0'}}>{data.price} VND</h2>
                     </div>
                     <CardActions disableSpacing>
@@ -57,8 +65,8 @@ export default function ProductCard(props) {
                         <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
                             <Button variant="contained" onClick={() => addToCart(data)}
                                     style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
-                            <Button variant="contained" style={{marginLeft: "10px"}}
-                                    color="primary">buy now</Button>
+                            <Button variant="contained" style={{marginLeft: "10px"}} onClick={()=> {handleClick(data.id)}}
+                                    color="primary">details</Button>
                         </div>
 
                     </CardActions>

@@ -2,6 +2,7 @@ import * as constant from '../Constant/constant'
 
 const initialState = {
     cartItems: [],
+    numberTotal: 0,
 }
 
 const CartReducer = (state = initialState, action) => {
@@ -12,6 +13,7 @@ const CartReducer = (state = initialState, action) => {
             const st = {...state};
             try{
                 st.cartItems = action.payload.res;
+                st.numberTotal = action.payload.res.length;
             }catch(e){
                 //
             }

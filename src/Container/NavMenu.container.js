@@ -6,6 +6,7 @@ import {signOut} from "../Action/Signin.action";
 const mapStateToProps = (state) =>{
     return{
         isLogin: state.SignInReducer.isLogin,
+        numberTotal: state.CartReducer.numberTotal,
 
     }
 }
