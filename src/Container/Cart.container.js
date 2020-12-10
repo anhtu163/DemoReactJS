@@ -1,20 +1,23 @@
-import { connect } from "react-redux"
+import {connect} from "react-redux"
 import Cart from "../Component/Cart/Cart.component";
-import {getCartItemsRequest} from "../Action/Cart.action";
+import {getCartItemsRequest, removeFromCartRequest} from "../Action/Cart.action";
 
-const mapStateToProps = (state) =>{
-    return{
+const mapStateToProps = (state) => {
+    return {
         isLogin: state.SignInReducer.isLogin,
         cartItems: state.CartReducer.cartItems
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getCartItems: ()=> {dispatch(getCartItemsRequest())}
+        getCartItems: () => {
+            dispatch(getCartItemsRequest())
+        },
+        removeFromCart: (product) => dispatch(removeFromCartRequest(product))
     }
 }
 
-const CartContainer = connect (
+const CartContainer = connect(
     mapStateToProps,
     mapDispatchToProps,
 )(Cart);

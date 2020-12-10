@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import '../Style/SignIn.style.css';
 import { Redirect } from "react-router-dom";
-
+import '../Style/Container.style.css';
 export default class Signin extends React.Component {
 
     constructor(props) {
@@ -29,6 +29,7 @@ export default class Signin extends React.Component {
         }
 
         return (
+            <div className="container">
             <div className="loginLayout">
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -85,6 +86,7 @@ export default class Signin extends React.Component {
                         </form>
                     </Card>
                 </Container>
+            </div>
             </div>
         );
     }
