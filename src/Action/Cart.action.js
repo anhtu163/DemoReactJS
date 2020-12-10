@@ -49,6 +49,23 @@ export const addToCart = (res) => ({
 
 //REMOVE FROM CART
 
+function onClickRemoveProductFromCart(index) {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(cartItems.length)
+    cartItems.splice(index, 1);
+    console.log(cartItems.length)
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    return cartItems;
+}
+
+export const removeFromCartRequest = (product) => {
+    return dispatch => {
+        const list = onClickRemoveProductFromCart(product);
+        return dispatch(removeFromCart(list));
+    }
+}
+
+
 export const removeFromCart = (res) => ({
     type: constant.REMOVE_FROM_CART,
     payload: {
@@ -59,9 +76,8 @@ export const removeFromCart = (res) => ({
 //GET CART ITEMS
 //props getCartItemsRequest duoc goi, sau khi duoc goi thi goi toi fetchCartItem de lay data
 //sau khi co data goi dispatch truyen action kem data vua nhan duoc cho reducer
-function fetchCartItems(){
-    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    return cartItems;
+function fetchCartItems() {
+    return JSON.parse(localStorage.getItem("cartItems"));
 }
 
 export const getCartItemsRequest = () => {
@@ -71,9 +87,9 @@ export const getCartItemsRequest = () => {
     }
 }
 
-export const getCartItems = res =>({
-   type: constant.GET_CART_ITEMS,
+export const getCartItems = res => ({
+    type: constant.GET_CART_ITEMS,
     payload: {
-       res
+        res
     }
 });
