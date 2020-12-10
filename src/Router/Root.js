@@ -1,16 +1,18 @@
-import {Route, BrowserRouter , Switch} from 'react-router-dom';
+import React from 'react';
+import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import CartContainer from "../Container/Cart.container";
 import ProductDetailContainer from "../Container/ProductDetail.container";
 import SignInContainer from "../Container/SignIn.container";
 import HomeContainer from "../Container/Home.container";
-import NavMenu from "../Component/NavMenu.component";
 import 'fontsource-roboto';
 import Checkout from "../Component/Checkout/Checkout.component";
+import NavMenuContainer from "../Container/NavMenu.container";
 
 const Root = () => (
     <div>
-        <NavMenu />
         <BrowserRouter>
+                <NavMenuContainer />
+
             <Switch>
 
                 <Route path="/checkout">

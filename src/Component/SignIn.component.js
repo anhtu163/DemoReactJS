@@ -21,12 +21,12 @@ export default class Signin extends React.Component {
     render() {
         const st = this.props;
 
-        // if (st.err === 'err') {
-        //     this.err = 'Username hoặc Password không đúng!!!';
-        // }
-        // if (st.token !== ''){
-        //     return <Redirect to="/" />;
-        // }
+        if (st.err === 'err') {
+            this.err = 'Username hoặc Password không đúng!!!';
+        }
+        if (st.isLogin === true){
+            return (<Redirect to="/" />);
+        }
 
         return (
             <div className="loginLayout">
@@ -66,12 +66,11 @@ export default class Signin extends React.Component {
                             <Button
                                 fullWidth
                                 variant="contained"
-                                style={{marginTop: '10px', marginBottom: '10px'}}
-                                color="secondary"
+                                style={{marginTop: '10px', marginBottom: '10px', color: 'white', backgroundColor: 'orangered'}}
                                 onClick={(event) => {
                                     event.preventDefault();
 
-                                    //st.login(this.username, this.password);
+                                    st.signIn(this.username, this.password);
                                 }}
                             >
                                 Sign In

@@ -11,7 +11,14 @@ export default class Cart extends React.Component {
         super(props);
     }
 
+
+
     render() {
+        const st = this.props;
+        if(!st.isLogin)
+        {
+            window.location.href='/signin'
+        }
         return(
             <div className="container">
                 <Card className="cart-wrapper">

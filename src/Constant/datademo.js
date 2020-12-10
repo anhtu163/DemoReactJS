@@ -72,3 +72,14 @@ export const list = [
         image: "https://hstatic.net/210/1000192210/954.jpg"
     },
 ]
+
+export const user = [
+    {
+        username: 'anhtu163',
+        password: '123456',
+    },
+    {
+        username: 'admin',
+        password: 'admin',
+    }
+]

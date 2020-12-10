@@ -11,8 +11,16 @@ const initialState = {
 const SignInReducer = (state = initialState, actions) => {
     switch (actions.type) {
         case constant.SIGN_IN:
+            const st = {...state};
+            try{
+                st.username = actions.data.res.username;
+                st.password = actions.data.res.password;
+                st.isLogin = true;
+            }catch (e){
+                st.err = 'err';
+            }
 
-            return state;
+            return st;
         default:
             return state;
     }
