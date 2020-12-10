@@ -1,11 +1,10 @@
-import * as data from '../Constrant/datademo';
-import * as constant from '../Constrant/constant';
+import * as data from '../Constant/datademo';
+import * as constant from '../Constant/constant';
 
 
 //get detail product
 function onClickGetDetailProduct(id){
-    const res = data.list.filter(e => e.id === parseInt(id, 10))[0];
-    return res;
+    return data.list.filter(e => e.id === parseInt(id, 10))[0];
 }
 
 export const getDetailProductRequest = (id) => {

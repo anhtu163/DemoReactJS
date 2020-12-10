@@ -9,7 +9,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import Button from "@material-ui/core/Button";
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         minWidth: 300,
         maxWidth: 300,
@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
 export default function ProductCard(props) {
     const classes = useStyles();
     const data = props.data;
-
+    console.log(data);
+    const addToCart = props.st.addToCart;
     const handleClick = (id) => {
         window.location.href = `/product-detail&id=${id}`;
     }
@@ -54,7 +55,7 @@ export default function ProductCard(props) {
                             <ShareIcon/>
                         </IconButton>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
-                            <Button variant="contained" onClick={() => handleClick(data.id)}
+                            <Button variant="contained" onClick={() => addToCart(data)}
                                     style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
                             <Button variant="contained" style={{marginLeft: "10px"}} onClick={() => handleClick(data.id)}
                                     color="primary">buy now</Button>

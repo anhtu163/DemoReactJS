@@ -1,8 +1,7 @@
 import { connect } from "react-redux"
-import Signin from "../Component/SignIn.component";
-import * as actions from '../Action/Signin.action';
 import Home from "../Component/Home/Home.component";
 import {getAllProductRequest} from "../Action/Home.action";
+import {addToCartRequest} from "../Action/Cart.action";
 
 const mapStateToProps = (state) =>{
     return{
@@ -11,8 +10,11 @@ const mapStateToProps = (state) =>{
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getAllProduct : () => {dispatch(getAllProductRequest())},
-    }
+        getAllProduct: () => {
+            dispatch(getAllProductRequest())
+        },
+        addToCart: (product) => dispatch(addToCartRequest(product))
+    };
 }
 
 const HomeContainer = connect (

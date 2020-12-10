@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../Style/Container.style.css';
 import '../../Style/Product/ProductDetail.style.css';
-import * as data from '../../Constrant/datademo';
-import {Button, Typography, TextField, Chip} from "@material-ui/core";
+import {Button, Typography, Chip} from "@material-ui/core";
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import CheckIcon from "@material-ui/icons/Check";
 import Rating from '@material-ui/lab/Rating';
@@ -33,7 +32,7 @@ export default class ProductDetail extends React.Component{
                 <div className="bg">
                     <div className="grid-1">
                         <div className="image">
-                            <img src={st.dataDetail.image}/>
+                            <img alt="product" src={st.dataDetail.image}/>
                         </div>
                         <div className="info">
                             <Typography variant="h5" component="h2">

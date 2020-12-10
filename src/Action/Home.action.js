@@ -1,8 +1,8 @@
-import * as data from '../Constrant/datademo';
-import * as constant from '../Constrant/constant';
+import * as data from '../Constant/datademo';
+import * as constant from '../Constant/constant';
 
 //get all products
-function onClickGetAllProduct(item){
+function onClickGetAllProduct(){
     return data.list;
 }
 
