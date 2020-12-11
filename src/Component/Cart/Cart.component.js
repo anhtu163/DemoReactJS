@@ -15,12 +15,6 @@ export default class Cart extends React.Component {
     componentDidMount() {
         const st = this.props;
         st.getCartItems();
-
-        if(st.cartItems.length !== 0){
-            st.cartItems.map(e =>{
-                this.total = this.total + (e.count * e.price);
-            })
-        }
     }
 
 
@@ -30,7 +24,7 @@ export default class Cart extends React.Component {
         {
             window.location.href='/signin'
         }
-        const numberOfItems = st.cartItems.length;
+        const numberOfItems = st.cartItems ? st.cartItems.length : 0;
         return(
             <div className="container">
                 <Card className="cart-wrapper">
