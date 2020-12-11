@@ -7,6 +7,7 @@ const initialState = {
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case constant.CHANGE_CART_ITEM_COUNT:
         case constant.ADD_TO_CART:
         case constant.REMOVE_FROM_CART:
         case constant.GET_CART_ITEMS:

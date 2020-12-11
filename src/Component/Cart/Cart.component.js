@@ -7,9 +7,6 @@ import '../../Style/Cart/CartComponent.css'
 
 export default class Cart extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         const st = this.props;
@@ -23,14 +20,15 @@ export default class Cart extends React.Component {
         {
             window.location.href='/signin'
         }
+        const numberOfItems = st.cartItems.length;
         return(
             <div className="container">
                 <Card className="cart-wrapper">
 
-                    <Typography variant="h5" component="h2">Cart Information:</Typography>
+                    <Typography variant="h5" component="h2">Cart Information: You have {numberOfItems} item(s) in the cart</Typography>
                     <div className="line-divide" />
                     <CartList cartItems={st.cartItems} st={st}/>
-                    <Subtotal/>
+                    <Subtotal cartItems={st.cartItems}/>
                 </Card>
             </div>
         )
