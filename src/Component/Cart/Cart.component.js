@@ -9,11 +9,18 @@ export default class Cart extends React.Component {
 
     constructor(props) {
         super(props);
+        this.total = 0;
     }
 
     componentDidMount() {
         const st = this.props;
         st.getCartItems();
+
+        if(st.cartItems.length !== 0){
+            st.cartItems.map(e =>{
+                this.total = this.total + (e.count * e.price);
+            })
+        }
     }
 
 
@@ -30,7 +37,7 @@ export default class Cart extends React.Component {
                     <Typography variant="h5" component="h2">Cart Information:</Typography>
                     <div className="line-divide" />
                     <CartList cartItems={st.cartItems} st={st}/>
-                    <Subtotal/>
+                    <Subtotal total={this.total}/>
                 </Card>
             </div>
         )

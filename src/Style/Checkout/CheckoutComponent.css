@@ -1,18 +1,27 @@
+.checkout-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.checkout-grid{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
 .checkout-card{
-    margin-bottom: 5px;
-    min-width: 800px;
+    padding: 5px;
+}
+.sub-checkout-card{
+    height: 100%;
 }
 .checkout-info-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
-
-    padding: 20px;
 }
 .checkout-field{
-    margin-bottom: 20px;
+    margin-bottom: 10px !important;
 }
+
 #order-button-wrapper{
     display: flex;
     justify-content: flex-end;
@@ -21,9 +30,5 @@
     width: 180px;
     font-size: 20px;
 }
-.checkout-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
+

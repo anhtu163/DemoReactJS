@@ -2,18 +2,16 @@ import React from 'react';
 import {Card, Icon} from "@material-ui/core";
 import '../../Style/SubtotalComponent.css'
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-export default class Subtotal extends React.Component {
+export default function Subtotal (props) {
 
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
         return(
             <div className="subtotal-wrapper">
-                <div id="subtotal-text">Sub total: $1231.33</div>
+                <Typography variant="h5" ><strong><u>Sub total:</u> {props.total} vnđ</strong></Typography>
                 <Button
+                    onClick={() => {window.location.href='/checkout'}}
                     size="large"
                     variant="contained"
                     style={{color: 'white', backgroundColor: 'orangered'}}
@@ -22,5 +20,4 @@ export default class Subtotal extends React.Component {
                 </Button>
             </div>
         )
-    }
 }

@@ -1,7 +1,8 @@
 .subtotal-wrapper{
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    align-items: center;
+    margin-top: 10px;
 }
 #subtotal-text{
     font-size: 22px;
