@@ -7,10 +7,20 @@ import '../../Style/Cart/CartComponent.css'
 
 export default class Cart extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.total = 0;
+    }
 
     componentDidMount() {
         const st = this.props;
         st.getCartItems();
+
+        if(st.cartItems.length !== 0){
+            st.cartItems.map(e =>{
+                this.total = this.total + (e.count * e.price);
+            })
+        }
     }
 
 
@@ -29,6 +39,7 @@ export default class Cart extends React.Component {
                     <div className="line-divide" />
                     <CartList cartItems={st.cartItems} st={st}/>
                     <Subtotal cartItems={st.cartItems}/>
+
                 </Card>
             </div>
         )

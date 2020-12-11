@@ -11,9 +11,9 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(() => ({
     root: {
-        minWidth: 300,
-        maxWidth: 300,
-        margin: 20,
+        minWidth: 250,
+        maxWidth: 250,
+        margin: 10,
     },
     hover: {
         '&:hover': {
@@ -59,9 +59,6 @@ export default function ProductCard(props) {
                         <h2 style={{color: 'orangered', margin: '0'}}>{data.price} VND</h2>
                     </div>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="share">
-                            <ShareIcon/>
-                        </IconButton>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
                             <Button variant="contained" onClick={() => addToCart(data)}
                                     style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
