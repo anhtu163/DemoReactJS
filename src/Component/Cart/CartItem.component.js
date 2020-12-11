@@ -30,7 +30,7 @@ export default function CartItem(props) {
                     </div>
                     <div className="name-price">
                         <div className="name-count">
-                            <Typography style={{marginBottom: '10px'}} variant="h6">{data.name}</Typography>
+                           
                             <ButtonGroup color="primary" aria-label="outlined primary button group">
                                 <Button onClick={() => {
                                     if (data.count > 1) {
@@ -50,7 +50,6 @@ export default function CartItem(props) {
                         <div className="price">
                             <Typography style={{marginTop: '10px'}} variant="h6">{data.price} $</Typography>
                         </div>
-
                     </div>
                     <div className="cart-delete-button">
                         <IconButton onClick={() => remove(props.index)}
