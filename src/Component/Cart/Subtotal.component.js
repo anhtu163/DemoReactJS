@@ -2,6 +2,7 @@ import React from 'react';
 import '../../Style/SubtotalComponent.css'
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Typography from "@material-ui/core/Typography";
 
 export default class Subtotal extends React.Component {
 
@@ -11,7 +12,7 @@ export default class Subtotal extends React.Component {
         const sum = myCart.reduce(((sum, item) => sum + item.price * item.count), 0);
         return (
             <div className="subtotal-wrapper">
-                <div id="subtotal-text">Sub total: $ {sum}</div>
+                <Typography variant="h5"><strong><u>Sub total:</u></strong> {sum} $</Typography>
                 <Button
                     onClick={()=>{window.location.href="/checkout"}}
                     size="large"

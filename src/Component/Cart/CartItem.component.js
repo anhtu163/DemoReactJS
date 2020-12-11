@@ -4,6 +4,10 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from "@material-ui/core/IconButton";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import {Button} from "@material-ui/core";
+import {Add, Delete, PlusOne, Remove} from "@material-ui/icons";
+import Typography from "@material-ui/core/Typography";
+
+
 
 
 export default function CartItem(props) {
@@ -25,23 +29,27 @@ export default function CartItem(props) {
                              alt="product"/>
                     </div>
                     <div className="name-price">
-                        <h3>{data.name}</h3>
-                        <ButtonGroup color="primary" aria-label="outlined primary button group">
-                            <Button onClick={() => {
-                                if (data.count > 1) {
-                                    let count = data.count - 1;
-                                    console.log(count);
-                                    st.changeCartItemCount(props.index, count);
+                        <div className="name-count">
+                           
+                            <ButtonGroup color="primary" aria-label="outlined primary button group">
+                                <Button onClick={() => {
+                                    if (data.count > 1) {
+                                        let count = data.count - 1;
+                                        console.log(count);
+                                        st.changeCartItemCount(props.index, count);
+                                    }
                                 }
-                            }
-                            }><h2>-</h2></Button>
-                            <Button>{data.count}</Button>
-                            <Button onClick={() => {
-                                let count = data.count + 1;
-                                st.changeCartItemCount(props.index, count);
-                            }}><h2>+</h2></Button>
-                        </ButtonGroup>
-                        <p>${data.price*data.count}</p>
+                                }><Remove/></Button>
+                                <Button>{data.count}</Button>
+                                <Button onClick={() => {
+                                    let count = data.count + 1;
+                                    st.changeCartItemCount(props.index, count);
+                                }}><Add/></Button>
+                            </ButtonGroup>
+                        </div>
+                        <div className="price">
+                            <Typography style={{marginTop: '10px'}} variant="h6">{data.price} $</Typography>
+                        </div>
                     </div>
                     <div className="cart-delete-button">
                         <IconButton onClick={() => remove(props.index)}

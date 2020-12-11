@@ -6,6 +6,15 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import CheckIcon from "@material-ui/icons/Check";
 import Rating from '@material-ui/lab/Rating';
 import Coupon from "./Coupon.component";
+import {Add, Remove} from "@material-ui/icons";
+import {addToCartFromDetail} from "../../Action/Cart.action";
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 export default class ProductDetail extends React.Component{
     constructor(props) {
@@ -15,6 +24,7 @@ export default class ProductDetail extends React.Component{
         this.state = {
             count: 0,
             value: 2,
+            open: false,
         }
         this.data = {}
     }
@@ -23,12 +33,29 @@ export default class ProductDetail extends React.Component{
         const st = this.props;
         st.getDetailProduct(this.id);
     }
+    handleClick = () => {
+        this.setState({ open: true});
+    };
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ open: false});
+    };
 
     render() {
         //const data = this.list.filter (e => e.id === parseInt(this.id,10))[0];
         const st = this.props;
+        console.log(this.state.count)
         return(
             <div className="container">
+                <Snackbar open={this.state.open} autoHideDuration={3000} onClose={this.handleClose}>
+                    <Alert onClose={this.handleClose} severity="success">
+                        Add <strong>{this.state.count} x {st.dataDetail.name}</strong>  into cart successfully!
+                    </Alert>
+                </Snackbar>
                 <div className="bg">
                     <div className="grid-1">
                         <div className="image">
@@ -58,19 +85,22 @@ export default class ProductDetail extends React.Component{
                             <div className="product-number">
 
                                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                                    <Button  onClick={()=> {
+                                    <Button onClick={() => {
                                         if (this.state.count > 0) {
                                             this.setState({count: this.state.count - 1})
                                         }
                                     }
-                                    }><h2>-</h2></Button>
+                                    }><Remove/></Button>
                                     <Button>{this.state.count}</Button>
-                                    <Button onClick={()=> { this.setState({count: this.state.count + 1 })}}><h2>+</h2></Button>
+                                    <Button onClick={()=> { this.setState({count: this.state.count + 1 })}}><Add/></Button>
                                 </ButtonGroup>
                             </div>
-                            <Button variant="contained"
-                                    style={{backgroundColor: "orangered", color: "white", marginRight: "20px"}}>Add to
-                                Cart</Button>
+                            <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+                                <Button onClick={() => {st.addToCartFromDetail(st.dataDetail, this.state.count); this.handleClick();}} variant="contained"
+                                        style={{backgroundColor: "orangered", color: "white", marginRight: "20px"}}>Add to
+                                    Cart</Button>
+                            </div>
+
                         </div>
                     </div>
                     <div className="grid-2">
@@ -98,6 +128,7 @@ export default class ProductDetail extends React.Component{
                                     Shopee sẽ liên hệ quý khách để giao hàng. (Nội thành HCM HN 1-2 ngày, Ngoại thành và các
                                     Tỉnh TP
                                     khác 3-5 ngày)</p>
+
 
                             </div>
 

@@ -6,10 +6,17 @@ import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import { Redirect } from "react-router-dom";
 import '../Style/SignIn.style.css';
 import '../Style/Container.style.css';
-import { Redirect } from "react-router-dom";
 import '../Style/Container.style.css';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 export default class Signin extends React.Component {
 
     constructor(props) {
@@ -17,21 +24,40 @@ export default class Signin extends React.Component {
         this.username = '';
         this.password = '';
         this.err = '';
+        this.state = {
+            open: false,
+        }
+    }
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ open: false});
+    };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const st = this.props;
+
     }
 
     render() {
         const st = this.props;
 
-        if (st.err === 'err') {
-            this.err = 'Username hoặc Password không đúng!!!';
-        }
+
         if (st.isLogin === true){
             return (<Redirect to="/" />);
         }
 
+
         return (
             <div className="container">
-            <div className="container">
+                <Snackbar open={this.state.open} autoHideDuration={3000} onClose={this.handleClose}>
+                    <Alert onClose={this.handleClose} severity="error">
+                        Username or Password is invalid!!
+                    </Alert>
+                </Snackbar>
                 <div className="loginLayout">
                     <Container component="main" maxWidth="xs">
                         <CssBaseline/>
@@ -64,8 +90,6 @@ export default class Signin extends React.Component {
                                     type="password"
                                     id="password"
                                 />
-
-                                <div className="Error">{this.err}</div>
                                 <Button
                                     fullWidth
                                     variant="contained"
@@ -79,6 +103,9 @@ export default class Signin extends React.Component {
                                         event.preventDefault();
 
                                         st.signIn(this.username, this.password);
+                                        if(st.err === 'err'){
+                                            this.setState({ open: true});
+                                        }
                                     }}
                                 >
                                     Sign In
@@ -94,7 +121,6 @@ export default class Signin extends React.Component {
                         </Card>
                     </Container>
                 </div>
-            </div>
             </div>
         );
     }

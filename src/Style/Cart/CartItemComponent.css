@@ -1,6 +1,6 @@
 .cart-item-wrapper{
     display: grid;
-    grid-template-columns: 25% 65% 10%;
+    grid-template-columns: 25% 60% 15%;
     width: 100%;
     padding: 10px;
 }
@@ -10,8 +10,10 @@
     margin: 5px;
 }
 .name-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    margin: 10px;
 }
 
 .cart-delete-button{
@@ -19,4 +21,15 @@
     justify-content: center;
     align-items: center;
 }
+.name-count{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.price{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

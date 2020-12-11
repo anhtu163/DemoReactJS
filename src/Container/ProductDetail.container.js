@@ -3,6 +3,7 @@ import * as actions from '../Action/Product.action';
 
 import ProductDetail from "../Component/Product/ProductDetail.component";
 import {getDetailProductRequest} from "../Action/Product.action";
+import {addToCartFromDetailRequest} from "../Action/Cart.action";
 
 const mapStateToProps = (state) =>{
     return{
@@ -12,6 +13,7 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) => {
     return {
         getDetailProduct: (id) => dispatch(getDetailProductRequest(id)),
+        addToCartFromDetail: (product, count) => dispatch(addToCartFromDetailRequest(product, count))
     }
 }
 

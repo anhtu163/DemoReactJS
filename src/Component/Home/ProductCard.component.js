@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
-import IconButton from '@material-ui/core/IconButton';
 import {red} from '@material-ui/core/colors';
-import ShareIcon from '@material-ui/icons/Share';
 import Button from "@material-ui/core/Button";
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
 const useStyles = makeStyles(() => ({
@@ -34,17 +34,35 @@ const useStyles = makeStyles(() => ({
         width: '250px',
     }
 }));
-
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 export default function ProductCard(props) {
     const classes = useStyles();
     const data = props.data;
     const addToCart = props.st.addToCart;
     const handleClick = (id) => {
         window.location.href = `/product-detail&id=${id}`;
+
     }
     console.log(localStorage.getItem('cartItems'))
+    const [open, setOpen] = React.useState(false);
+
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
     return (
         <div>
+            <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success">
+                    Add <strong>{data.name}</strong> into cart successfully!
+                </Alert>
+            </Snackbar>
             <Card className={classes.root} >
                 <div className={classes.hover}>
                     <CardMedia
@@ -56,11 +74,11 @@ export default function ProductCard(props) {
                         <div >
                             <h3 className={classes.name} style={{margin: '0'}} >{data.name}</h3>
                         </div>
-                        <h2 style={{color: 'orangered', margin: '0'}}>{data.price} VND</h2>
+                        <h2 style={{color: 'orangered', margin: '0'}}>{data.price} $</h2>
                     </div>
                     <CardActions disableSpacing>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
-                            <Button variant="contained" onClick={() => addToCart(data)}
+                            <Button variant="contained" onClick={() => {addToCart(data); setOpen(true); }}
                                     style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
                             <Button variant="contained" style={{marginLeft: "10px"}} onClick={()=> {handleClick(data.id)}}
                                     color="primary">details</Button>

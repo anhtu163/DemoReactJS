@@ -89,6 +89,7 @@ export default class Checkout extends React.Component {
 
     render() {
         const st = this.props;
+
         if (!st.isLogin) {
             window.location.href = '/signin'
         }
@@ -102,7 +103,7 @@ export default class Checkout extends React.Component {
                         <Card className="sub-checkout-card">
                             <CardHeader
                                 title="Products in cart"
-                                subheader="Your choice"
+                                subheader="Your products"
                             />
                             <CardContent>
                                 <div className="line-divide"/>
@@ -116,7 +117,7 @@ export default class Checkout extends React.Component {
                                 <div className="line-divide"/>
                             </CardContent>
                             <CardContent>
-                                <Typography variant="h5">Total: {this.total} vnđ </Typography>
+                                <Typography variant="h5">Total: {this.total} $ </Typography>
                             </CardContent>
 
                         </Card>
@@ -161,7 +162,8 @@ export default class Checkout extends React.Component {
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Available methods</FormLabel>
                                         <RadioGroup aria-label="pay-method" name="pay-method"
-                                                    value={payMethod}
+                                                    value={this.state.payMethod}
+
                                                     onChange={this.onPayMethodChanged}>
                                             <FormControlLabel value="1" control={<Radio/>} label="Cash on delivery"/>
                                             <FormControlLabel value="2" control={<Radio/>} label="Internet banking"/>
