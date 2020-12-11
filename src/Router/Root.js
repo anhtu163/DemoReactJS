@@ -5,17 +5,19 @@ import ProductDetailContainer from "../Container/ProductDetail.container";
 import SignInContainer from "../Container/SignIn.container";
 import HomeContainer from "../Container/Home.container";
 import 'fontsource-roboto';
+import Checkout from "../Component/Checkout/Checkout.component";
 import NavMenuContainer from "../Container/NavMenu.container";
 import Footer from "../Component/Footer.component";
-import CheckOutContainer from "../Container/CheckOut.container";
 
 const Root = () => (
     <div>
         <BrowserRouter>
-            <NavMenuContainer />
+                <NavMenuContainer />
+
             <Switch>
+
                 <Route path="/checkout">
-                    <CheckOutContainer />
+                    <Checkout />
                 </Route>
                 <Route  path="/signin">
                     <SignInContainer />
@@ -27,6 +29,7 @@ const Root = () => (
                 <Route  path="/">
                     <HomeContainer />
                 </Route>
+
             </Switch>
             <Footer />
         </BrowserRouter>
