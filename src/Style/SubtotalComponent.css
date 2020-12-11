@@ -1,10 +1,6 @@
 .subtotal-wrapper{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-top: 10px;
-}
-#subtotal-text{
-    font-size: 22px;
-    font-weight: bold;
 }

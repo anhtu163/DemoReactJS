@@ -36,17 +36,15 @@ export default class Checkout extends React.Component {
     componentDidMount() {
         const st = this.props;
         st.getCartItems();
-
-        if(st.cartItems.length !== 0){
-            st.cartItems.map(e =>{
-                this.total = this.total + (e.count * e.price);
-            })
-        }
     }
 
     render() {
         const st = this.props;
-
+        if(!st.isLogin)
+        {
+            window.location.href='/signin'
+        }
+        const sum = st.cartItems.reduce(((sum, item) => sum + item.price * item.count), 0);
 
         console.log(this.total);
         return(
@@ -57,7 +55,7 @@ export default class Checkout extends React.Component {
                         <Card className="sub-checkout-card">
                             <CardHeader
                                 title="Products in cart"
-                                subheader="Your choice"
+                                subheader="Your products"
                             />
                             <CardContent>
                                 <div className="line-divide"/>
@@ -71,7 +69,7 @@ export default class Checkout extends React.Component {
                                 <div className="line-divide"/>
                             </CardContent>
                             <CardContent>
-                                <Typography variant="h5">Total: {this.total} vnđ </Typography>
+                                <Typography variant="h5">Total: {sum} $ </Typography>
                             </CardContent>
 
                         </Card>
@@ -110,7 +108,7 @@ export default class Checkout extends React.Component {
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Available methods</FormLabel>
                                         <RadioGroup aria-label="pay-method" name="pay-method"
-                                                    value={this.state.paymethod}
+                                                    value={this.state.payMethod}
                                                     onChange={this.onPayMethodChanged}>
                                             <FormControlLabel value="cod" control={<Radio/>} label="Cash on delivery"/>
                                             <FormControlLabel value="ib" control={<Radio/>} label="Internet banking"/>

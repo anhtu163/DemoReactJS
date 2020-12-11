@@ -16,7 +16,7 @@ export default function CheckoutProduct(props) {
                 </div>
                 <div>
                     <p>{data.name}</p>
-                    <p>{data.count} x {data.price} vnđ</p>
+                    <p>{data.count} x {data.price} $</p>
                 </div>
             </Card>
         )

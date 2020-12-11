@@ -114,3 +114,43 @@ export const changeCartItemCount = res => ({
         res
     }
 });
+
+// ADD PRODUCT TO CART FROM DETAIL
+
+function onClickAddProductToCartFromDetail(product, count) {
+
+    console.log('product: ' + product);
+    console.log('count: '+ count);
+    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    if (cartItems === null) {
+        cartItems = [];
+    }
+    let alreadyExists = false;
+    cartItems.forEach((item) => {
+        if (item.id === product.id) {
+            alreadyExists = true;
+            item.count = item.count + count;
+        }
+    });
+    if (!alreadyExists) {
+        cartItems.push({...product, count: count});
+    }
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    return cartItems;
+}
+
+
+export const addToCartFromDetailRequest = (product, count) => {
+    return dispatch => {
+        const list = onClickAddProductToCartFromDetail(product, count);
+        return dispatch(addToCartFromDetail(list));
+    }
+}
+
+//dispatch
+export const addToCartFromDetail = (res) => ({
+    type: constant.ADD_TO_CART_FROM_DETAIL,
+    payload: {
+        res,
+    }
+})

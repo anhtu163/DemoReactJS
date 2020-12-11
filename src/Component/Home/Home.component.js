@@ -14,6 +14,7 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.list = [];
+
     }
 
     componentDidMount() {
@@ -23,6 +24,7 @@ export default class Home extends React.Component {
     }
 
     render() {
+
 
         const st = this.props;
         return (
