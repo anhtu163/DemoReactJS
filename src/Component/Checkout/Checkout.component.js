@@ -13,6 +13,7 @@ import '../../Style/Checkout/CheckoutComponent.css'
 import Button from "@material-ui/core/Button";
 import '../../Style/Container.style.css';
 import CheckoutProduct from "./CheckoutProduct.component";
+import {Alert} from "@material-ui/lab";
 
 
 export default class Checkout extends React.Component {
@@ -24,7 +25,8 @@ export default class Checkout extends React.Component {
             name: '',
             address: '',
             phoneNumber: '',
-            payMethod: '1'
+            payMethod: '1',
+            errors: []
         }
     }
 
@@ -57,8 +59,32 @@ export default class Checkout extends React.Component {
     }
 
     handleOrder = () => {
+        const {
+            name,
+            address,
+            phoneNumber
+        } = this.state;
+        let hasError = this.validate(name, address, phoneNumber);
+        if (hasError) {
+            this.setState({errors: hasError});
+            return;
+        }
         const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
         console.log(order);
+    }
+
+    validate = (name, address, phoneNumber) => {
+        const errors = [];
+        if (name.length === 0) {
+            errors.isNameError = true;
+        }
+        if (address.length === 0) {
+            errors.isAddressError = true;
+        }
+        if (phoneNumber.length === 0) {
+            errors.isPhoneNumberError = true;
+        }
+        return errors;
     }
 
     render() {
@@ -66,11 +92,12 @@ export default class Checkout extends React.Component {
         if (!st.isLogin) {
             window.location.href = '/signin'
         }
-        const {name, address, phoneNumber, payMethod} = this.state;
+        const {
+            name, address, phoneNumber, payMethod, errors
+        } = this.state;
         return (
             <div className="container">
                 <div className="checkout-wrapper checkout-grid">
-
                     <div className="checkout-card">
                         <Card className="sub-checkout-card">
                             <CardHeader
@@ -105,12 +132,14 @@ export default class Checkout extends React.Component {
                                     <div className="line-divide"/>
                                 </CardContent>
                                 <CardContent className="checkout-info-wrapper">
-
+                                    {errors.isNameError && < Alert severity="error">Name must be not empty!</Alert>}
                                     <TextField value={name} onChange={(e) => this.onChangeName(e)}
                                                className="checkout-field" required
                                                label="Name" variant="outlined"/>
+                                    {errors.isAddressError && <Alert severity="error">Name must be not empty!</Alert>}
                                     <TextField value={address} onChange={(e) => this.onChangeAddress(e)}
                                                className="checkout-field" required label="Address" variant="outlined"/>
+                                    {errors.isPhoneNumberError && <Alert severity="error">Phone number is not valid!</Alert>}
                                     <TextField value={phoneNumber} onChange={(e) => this.onChangePhoneNumber(e)}
                                                className="checkout-field" required label="Phone number"
                                                variant="outlined"/>

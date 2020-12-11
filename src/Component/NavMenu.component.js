@@ -12,7 +12,6 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import '../Style/NavMenu.style.css';
 import {Badge, Button} from "@material-ui/core";
-import { Redirect } from 'react-router-dom';
 
 export default class NavMenu extends React.Component{
     constructor(props) {
@@ -49,7 +48,6 @@ export default class NavMenu extends React.Component{
 
         };
 
-        console.log(st.isLogin);
         return (
             <div>
                 <AppBar position="static" className="menu">
