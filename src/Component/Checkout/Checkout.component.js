@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Avatar,
     Card,
     CardActions,
     CardContent,
@@ -22,34 +21,53 @@ export default class Checkout extends React.Component {
         super(props);
         this.total = 0;
         this.state = {
-            payMethod: 'cod'
+            name: '',
+            address: '',
+            phoneNumber: '',
+            payMethod: '1'
+        }
+    }
+
+    componentDidMount() {
+        const st = this.props;
+        st.getCartItems();
+        if (st.cartItems.length !== 0) {
+            st.cartItems.forEach(e => {
+                this.total = this.total + (e.count * e.price);
+            })
         }
     }
 
     onPayMethodChanged = (e) => {
         this.setState({
             payMethod: e.target.value
-        },()=>
-        console.log(this.state.payMethod));
+        });
     }
 
-    componentDidMount() {
-        const st = this.props;
-        st.getCartItems();
+    onChangeName = (e) => {
+        this.setState({name: e.target.value});
+    }
 
-        if(st.cartItems.length !== 0){
-            st.cartItems.map(e =>{
-                this.total = this.total + (e.count * e.price);
-            })
-        }
+    onChangeAddress = (e) => {
+        this.setState({address: e.target.value});
+    }
+
+    onChangePhoneNumber = (e) => {
+        this.setState({phoneNumber: e.target.value});
+    }
+
+    handleOrder = () => {
+        const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
+        console.log(order);
     }
 
     render() {
         const st = this.props;
-
-
-        console.log(this.total);
-        return(
+        if (!st.isLogin) {
+            window.location.href = '/signin'
+        }
+        const {name, address, phoneNumber, payMethod} = this.state;
+        return (
             <div className="container">
                 <div className="checkout-wrapper checkout-grid">
 
@@ -64,7 +82,7 @@ export default class Checkout extends React.Component {
                             </CardContent>
                             <CardContent className="checkout-info-wrapper">
                                 {st.cartItems && st.cartItems.map(e => (
-                                    <CheckoutProduct data={e}/>
+                                    <CheckoutProduct key={e.id} data={e}/>
                                 ))}
                             </CardContent>
                             <CardContent>
@@ -88,9 +106,13 @@ export default class Checkout extends React.Component {
                                 </CardContent>
                                 <CardContent className="checkout-info-wrapper">
 
-                                    <TextField className="checkout-field" required label="Name" variant="outlined"/>
-                                    <TextField className="checkout-field" required label="Address" variant="outlined"/>
-                                    <TextField className="checkout-field" required label="Phone number"
+                                    <TextField value={name} onChange={(e) => this.onChangeName(e)}
+                                               className="checkout-field" required
+                                               label="Name" variant="outlined"/>
+                                    <TextField value={address} onChange={(e) => this.onChangeAddress(e)}
+                                               className="checkout-field" required label="Address" variant="outlined"/>
+                                    <TextField value={phoneNumber} onChange={(e) => this.onChangePhoneNumber(e)}
+                                               className="checkout-field" required label="Phone number"
                                                variant="outlined"/>
                                 </CardContent>
                             </Card>
@@ -110,15 +132,15 @@ export default class Checkout extends React.Component {
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Available methods</FormLabel>
                                         <RadioGroup aria-label="pay-method" name="pay-method"
-                                                    value={this.state.paymethod}
+                                                    value={payMethod}
                                                     onChange={this.onPayMethodChanged}>
-                                            <FormControlLabel value="cod" control={<Radio/>} label="Cash on delivery"/>
-                                            <FormControlLabel value="ib" control={<Radio/>} label="Internet banking"/>
+                                            <FormControlLabel value="1" control={<Radio/>} label="Cash on delivery"/>
+                                            <FormControlLabel value="2" control={<Radio/>} label="Internet banking"/>
                                         </RadioGroup>
                                     </FormControl>
                                 </CardContent>
                                 <CardActions id="order-button-wrapper">
-                                    <Button id="order-button" variant="contained"
+                                    <Button onClick={() => this.handleOrder()} id="order-button" variant="contained"
                                             style={{color: 'white', backgroundColor: 'orangered'}}>Order</Button>
                                 </CardActions>
                             </Card>

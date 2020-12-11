@@ -28,7 +28,7 @@ export default function CartItem(props) {
                         <h3>{data.name}</h3>
                         <ButtonGroup color="primary" aria-label="outlined primary button group">
                             <Button onClick={() => {
-                                if (data.count > 0) {
+                                if (data.count > 1) {
                                     let count = data.count - 1;
                                     console.log(count);
                                     st.changeCartItemCount(props.index, count);
@@ -41,7 +41,7 @@ export default function CartItem(props) {
                                 st.changeCartItemCount(props.index, count);
                             }}><h2>+</h2></Button>
                         </ButtonGroup>
-                        <p>${data.price}</p>
+                        <p>${data.price*data.count}</p>
                     </div>
                     <div className="cart-delete-button">
                         <IconButton onClick={() => remove(props.index)}
