@@ -6,7 +6,6 @@ export default function CartList (props) {
 
         return (
             <div>
-                <CartItem/>
                 { props.cartItems ? props.cartItems.map((data, index) => <CartItem key={data.id} st={props.st} data={data} index={index}/>) : []}
             </div>
         )

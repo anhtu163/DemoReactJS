@@ -51,9 +51,7 @@ export const addToCart = (res) => ({
 
 function onClickRemoveProductFromCart(index) {
     const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    console.log(cartItems.length)
     cartItems.splice(index, 1);
-    console.log(cartItems.length)
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     return cartItems;
 }
@@ -89,6 +87,29 @@ export const getCartItemsRequest = () => {
 
 export const getCartItems = res => ({
     type: constant.GET_CART_ITEMS,
+    payload: {
+        res
+    }
+});
+
+//CHANGE QUANTITY
+
+function onClickChangeCartItemCount(index, count) {
+    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    cartItems[index].count = count;
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    return cartItems;
+}
+
+export const changeCartItemCountRequest = (product, count) => {
+    return dispatch => {
+        const list = onClickChangeCartItemCount(product, count);
+        return dispatch(changeCartItemCount(list));
+    }
+}
+
+export const changeCartItemCount = res => ({
+    type: constant.CHANGE_CART_ITEM_COUNT,
     payload: {
         res
     }
