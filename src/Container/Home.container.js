@@ -8,6 +8,7 @@ import {addToCartRequest, getCartItemsRequest} from "../Action/Cart.action";
 const mapStateToProps = (state) =>{
     return{
         productsList: state.HomeReducer.productsList,
+        isLogin: state.SignInReducer.isLogin,
     }
 }
 const mapDispatchToProps = (dispatch) => {

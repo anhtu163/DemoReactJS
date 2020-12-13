@@ -8,6 +8,7 @@ import {addToCartFromDetailRequest} from "../Action/Cart.action";
 const mapStateToProps = (state) =>{
     return{
         dataDetail : state.ProductDetailReducer.dataDetail,
+        isLogin: state.SignInReducer.isLogin,
     }
 }
 const mapDispatchToProps = (dispatch) => {

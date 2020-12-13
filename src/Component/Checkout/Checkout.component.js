@@ -134,14 +134,14 @@ export default class Checkout extends React.Component {
                                 </CardContent>
                                 <CardContent className="checkout-info-wrapper">
                                     {errors.isNameError && < Alert severity="error">Name must be not empty!</Alert>}
-                                    <TextField value={name} onChange={(e) => this.onChangeName(e)}
+                                    <TextField value={name} onChange={(e) => {this.onChangeName(e); errors.isNameError = false;}}
                                                className="checkout-field" required
                                                label="Name" variant="outlined"/>
-                                    {errors.isAddressError && <Alert severity="error">Name must be not empty!</Alert>}
-                                    <TextField value={address} onChange={(e) => this.onChangeAddress(e)}
+                                    {errors.isAddressError && <Alert severity="error">Address must be not empty!</Alert>}
+                                    <TextField value={address} onChange={(e) => {this.onChangeAddress(e); errors.isAddressError = false;}}
                                                className="checkout-field" required label="Address" variant="outlined"/>
                                     {errors.isPhoneNumberError && <Alert severity="error">Phone number is not valid!</Alert>}
-                                    <TextField value={phoneNumber} onChange={(e) => this.onChangePhoneNumber(e)}
+                                    <TextField value={phoneNumber} onChange={(e) => {this.onChangePhoneNumber(e); errors.isPhoneNumberError = false;}}
                                                className="checkout-field" required label="Phone number"
                                                variant="outlined"/>
                                 </CardContent>

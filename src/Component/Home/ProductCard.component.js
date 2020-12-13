@@ -78,7 +78,14 @@ export default function ProductCard(props) {
                     </div>
                     <CardActions disableSpacing>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
-                            <Button variant="contained" onClick={() => {addToCart(data); setOpen(true); }}
+                            <Button variant="contained" onClick={() => {
+                                if(props.st.isLogin) {
+                                    addToCart(data);
+                                    setOpen(true);
+                                }else{
+                                    window.location.href='/signin';
+                                }
+                            }}
                                     style={{color: 'white', backgroundColor: 'orangered'}}>add to cart</Button>
                             <Button variant="contained" style={{marginLeft: "10px"}} onClick={()=> {handleClick(data.id)}}
                                     color="primary">details</Button>

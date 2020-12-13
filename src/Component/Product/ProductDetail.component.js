@@ -25,6 +25,7 @@ export default class ProductDetail extends React.Component{
             count: 0,
             value: 2,
             open: false,
+            openErr: false,
         }
         this.data = {}
     }
@@ -34,7 +35,13 @@ export default class ProductDetail extends React.Component{
         st.getDetailProduct(this.id);
     }
     handleClick = () => {
-        this.setState({ open: true});
+        if(this.state.count === 0){
+            this.setState({openErr: true})
+        }else
+        {
+            this.setState({ open: true});
+        }
+
     };
 
     handleClose = (event, reason) => {
@@ -42,7 +49,7 @@ export default class ProductDetail extends React.Component{
             return;
         }
 
-        this.setState({ open: false});
+        this.setState({ open: false, openErr: false});
     };
 
     render() {
@@ -54,6 +61,11 @@ export default class ProductDetail extends React.Component{
                 <Snackbar open={this.state.open} autoHideDuration={3000} onClose={this.handleClose}>
                     <Alert onClose={this.handleClose} severity="success">
                         Add <strong>{this.state.count} x {st.dataDetail.name}</strong>  into cart successfully!
+                    </Alert>
+                </Snackbar>
+                <Snackbar open={this.state.openErr} autoHideDuration={3000} onClose={this.handleClose}>
+                    <Alert onClose={this.handleClose} severity="error">
+                        Number of products can not equal 0!
                     </Alert>
                 </Snackbar>
                 <div className="bg">
@@ -96,7 +108,17 @@ export default class ProductDetail extends React.Component{
                                 </ButtonGroup>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
-                                <Button onClick={() => {st.addToCartFromDetail(st.dataDetail, this.state.count); this.handleClick();}} variant="contained"
+                                <Button onClick={() => {
+                                    if(st.isLogin) {
+                                        if(this.state.count !== 0)
+                                        {
+                                            st.addToCartFromDetail(st.dataDetail, this.state.count);
+                                        }
+                                        this.handleClick();
+                                    }else{
+                                        window.location.href='/signin';
+                                    }
+                                }} variant="contained"
                                         style={{backgroundColor: "orangered", color: "white", marginRight: "20px"}}>Add to
                                     Cart</Button>
                             </div>
