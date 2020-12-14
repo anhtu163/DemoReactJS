@@ -71,7 +71,7 @@ export default class Checkout extends React.Component {
             return;
         }
         // const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
-        window.location.href="/success-checkout";
+        window.location.href = "/success-checkout";
     }
 
     validate = (name, address, phoneNumber) => {
@@ -82,10 +82,14 @@ export default class Checkout extends React.Component {
         if (address.length === 0) {
             errors.isAddressError = true;
         }
-        if (phoneNumber.length === 0) {
+        if (phoneNumber.length === 0 || !this.isVietnamesePhoneNumber(phoneNumber)) {
             errors.isPhoneNumberError = true;
         }
         return errors;
+    }
+
+    isVietnamesePhoneNumber = (number) => {
+        return /(03|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(number);
     }
 
     render() {
@@ -135,14 +139,25 @@ export default class Checkout extends React.Component {
                                 </CardContent>
                                 <CardContent className="checkout-info-wrapper">
                                     {errors.isNameError && < Alert severity="error">Name must be not empty!</Alert>}
-                                    <TextField value={name} onChange={(e) => {this.onChangeName(e); errors.isNameError = false;}}
+                                    <TextField value={name} onChange={(e) => {
+                                        this.onChangeName(e);
+                                        errors.isNameError = false;
+                                    }}
                                                className="checkout-field" required
                                                label="Name" variant="outlined"/>
-                                    {errors.isAddressError && <Alert severity="error">Address must be not empty!</Alert>}
-                                    <TextField value={address} onChange={(e) => {this.onChangeAddress(e); errors.isAddressError = false;}}
+                                    {errors.isAddressError &&
+                                    <Alert severity="error">Address must be not empty!</Alert>}
+                                    <TextField value={address} onChange={(e) => {
+                                        this.onChangeAddress(e);
+                                        errors.isAddressError = false;
+                                    }}
                                                className="checkout-field" required label="Address" variant="outlined"/>
-                                    {errors.isPhoneNumberError && <Alert severity="error">Phone number is not valid!</Alert>}
-                                    <TextField value={phoneNumber} onChange={(e) => {this.onChangePhoneNumber(e); errors.isPhoneNumberError = false;}}
+                                    {errors.isPhoneNumberError &&
+                                    <Alert severity="error">Phone number is not valid!</Alert>}
+                                    <TextField value={phoneNumber} onChange={(e) => {
+                                        this.onChangePhoneNumber(e);
+                                        errors.isPhoneNumberError = false;
+                                    }}
                                                className="checkout-field" required label="Phone number"
                                                variant="outlined"/>
                                 </CardContent>
