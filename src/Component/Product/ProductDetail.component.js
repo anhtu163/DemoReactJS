@@ -7,7 +7,6 @@ import CheckIcon from "@material-ui/icons/Check";
 import Rating from '@material-ui/lab/Rating';
 import Coupon from "./Coupon.component";
 import {Add, Remove} from "@material-ui/icons";
-import {addToCartFromDetail} from "../../Action/Cart.action";
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 

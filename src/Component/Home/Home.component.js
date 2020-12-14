@@ -32,7 +32,7 @@ export default class Home extends React.Component {
                 <Banner/>
                 <div className="line-divide"/>
                 <div className="product-list">
-                    { st.productsList ?  st.productsList.map(e => <ProductCard st={st} data = {e} />) : []}
+                    { st.productsList ?  st.productsList.map(e => <ProductCard key={e.id} st={st} data = {e} />) : []}
                 </div>
                 <div className="page-list">
                     <Pagination className="pages" count={5} variant="outlined" shape="rounded" color="secondary"/>

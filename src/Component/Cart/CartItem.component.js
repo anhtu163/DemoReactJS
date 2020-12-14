@@ -4,7 +4,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from "@material-ui/core/IconButton";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import {Button} from "@material-ui/core";
-import {Add, Delete, PlusOne, Remove} from "@material-ui/icons";
+import {Add, Remove} from "@material-ui/icons";
 import Typography from "@material-ui/core/Typography";
 
 
@@ -35,7 +35,6 @@ export default function CartItem(props) {
                                 <Button onClick={() => {
                                     if (data.count > 1) {
                                         let count = data.count - 1;
-                                        console.log(count);
                                         st.changeCartItemCount(props.index, count);
                                     }
                                 }
@@ -48,7 +47,7 @@ export default function CartItem(props) {
                             </ButtonGroup>
                         </div>
                         <div className="price">
-                            <Typography style={{marginTop: '10px'}} variant="h6">{data.price} $</Typography>
+                            <Typography style={{marginTop: '10px'}} variant="h6">{data.price*data.count} $</Typography>
                         </div>
                     </div>
                     <div className="cart-delete-button">

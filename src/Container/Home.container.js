@@ -1,6 +1,4 @@
 import { connect } from "react-redux"
-import Signin from "../Component/SignIn.component";
-import * as actions from '../Action/Signin.action';
 import Home from "../Component/Home/Home.component";
 import {getAllProductRequest} from "../Action/Home.action";
 import {addToCartRequest, getCartItemsRequest} from "../Action/Cart.action";

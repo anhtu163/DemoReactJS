@@ -38,14 +38,10 @@ export default class Signin extends React.Component {
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        const st = this.props;
-
     }
 
     render() {
         const st = this.props;
-
-
         if (st.isLogin === true){
             return (<Redirect to="/" />);
         }

@@ -12,7 +12,7 @@ export default function CheckoutProduct(props) {
     return(
             <Card className="product-checkout-card">
                 <div>
-                    <img className="thumb-nail" src={data.image}/>
+                    <img alt="product" className="thumb-nail" src={data.image}/>
                 </div>
                 <div>
                     <p>{data.name}</p>
