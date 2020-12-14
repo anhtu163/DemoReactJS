@@ -22,18 +22,18 @@ export default class Banner extends React.Component{
     }
 
     componentDidMount() {
-        this.interval = setInterval(() => this.tick(), 3000);
+        this.interval = setInterval(() => this.tick(), 2000);
     }
     render() {
         return(
 
                 <div className="banner">
                     <div className="bannerLeft">
-                        <img  src={this.listImg[this.state.current]}/>
+                        <img alt="slide promotion" src={this.listImg[this.state.current]}/>
                     </div>
                     <div className="bannerRight">
-                        <div><img src="https://cf.shopee.vn/file/eaba2f3f50d58fb66d1b9711a02a8dd8_xhdpi"/></div>
-                        <div><img src="https://cf.shopee.vn/file/c157289c4d2323cadbb3c2aa5b2b24ce_xhdpi"/></div>
+                        <div><img alt="promotion" src="https://cf.shopee.vn/file/eaba2f3f50d58fb66d1b9711a02a8dd8_xhdpi"/></div>
+                        <div><img alt="promotion" src="https://cf.shopee.vn/file/c157289c4d2323cadbb3c2aa5b2b24ce_xhdpi"/></div>
                     </div>
                 </div>
         )

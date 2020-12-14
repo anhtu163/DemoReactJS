@@ -8,6 +8,7 @@ import 'fontsource-roboto';
 import NavMenuContainer from "../Container/NavMenu.container";
 import Footer from "../Component/Footer.component";
 import CheckOutContainer from "../Container/CheckOut.container";
+import SuccessCheckoutContainer from "../Container/SuccessCheckout.container";
 
 const Root = () => (
     <div>
@@ -16,6 +17,9 @@ const Root = () => (
             <Switch>
                 <Route path="/checkout">
                     <CheckOutContainer />
+                </Route>
+                <Route path="/success-checkout">
+                    <SuccessCheckoutContainer />
                 </Route>
                 <Route  path="/signin">
                     <SignInContainer />
