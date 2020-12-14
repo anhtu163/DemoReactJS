@@ -45,7 +45,6 @@ export default function ProductCard(props) {
         window.location.href = `/product-detail&id=${id}`;
 
     }
-    console.log(localStorage.getItem('cartItems'))
     const [open, setOpen] = React.useState(false);
 
 
