@@ -65,16 +65,17 @@ export default class Checkout extends React.Component {
             phoneNumber
         } = this.state;
         let hasError = this.validate(name, address, phoneNumber);
-        if (hasError) {
+        console.log(hasError);
+        if (hasError.isNameError || hasError.isAddressError || hasError.isPhoneNumberError) {
             this.setState({errors: hasError});
             return;
         }
         const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
-        console.log(order);
+        window.location.href="/success-checkout";
     }
 
     validate = (name, address, phoneNumber) => {
-        const errors = [];
+        const errors = {};
         if (name.length === 0) {
             errors.isNameError = true;
         }
@@ -171,7 +172,7 @@ export default class Checkout extends React.Component {
                                     </FormControl>
                                 </CardContent>
                                 <CardActions id="order-button-wrapper">
-                                    <Button onClick={() => this.handleOrder()} id="order-button" variant="contained"
+                                    <Button onClick={this.handleOrder} id="order-button" variant="contained"
                                             style={{color: 'white', backgroundColor: 'orangered'}}>Order</Button>
                                 </CardActions>
                             </Card>
