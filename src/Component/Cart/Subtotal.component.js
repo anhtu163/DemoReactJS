@@ -12,7 +12,7 @@ export default class Subtotal extends React.Component {
         const sum = myCart.reduce(((sum, item) => sum + item.price * item.count), 0);
         return (
             <div className="subtotal-wrapper">
-                <Typography variant="h5"><strong><u>Sub total:</u></strong> {sum} $</Typography>
+                <Typography variant="h6"><u>Sub total:</u><strong> {sum} $</strong></Typography>
                 <Button
                     onClick={()=>{window.location.href="/checkout"}}
                     size="large"
