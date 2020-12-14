@@ -70,7 +70,7 @@ export default class Checkout extends React.Component {
             this.setState({errors: hasError});
             return;
         }
-        const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
+        // const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
         window.location.href="/success-checkout";
     }
 
@@ -95,7 +95,7 @@ export default class Checkout extends React.Component {
             window.location.href = '/signin'
         }
         const {
-            name, address, phoneNumber, payMethod, errors
+            name, address, phoneNumber, errors
         } = this.state;
         return (
             <div className="container">
