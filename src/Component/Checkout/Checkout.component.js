@@ -59,6 +59,7 @@ export default class Checkout extends React.Component {
     }
 
     handleOrder = () => {
+        const st = this.props;
         const {
             name,
             address,
@@ -70,8 +71,9 @@ export default class Checkout extends React.Component {
             this.setState({errors: hasError});
             return;
         }
-        // const order = {deliveryInfo: {...this.state}, orderItems: {...this.props.cartItems}};
-        window.location.href = "/success-checkout";
+        const order = {deliveryInfo: {...this.state}, orderItems: [...this.props.cartItems]};
+        st.setOrder(order);
+        window.location.href="/success-checkout";
     }
 
     validate = (name, address, phoneNumber) => {
