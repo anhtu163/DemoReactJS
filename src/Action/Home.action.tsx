@@ -6,16 +6,16 @@ function onClickGetAllProduct(){
     return data.list;
 }
 
-export const getAllProductRequest = (item) => {
+export const getAllProductRequest = () => {
 
-    return dispatch => {
-        const res = onClickGetAllProduct(item);
+    return (dispatch: any) => {
+        const res = onClickGetAllProduct();
         return dispatch(getAllProduct(res));
     }
 
 }
 
-export const getAllProduct = (res) => ({
+export const getAllProduct = (res: any) => ({
     type: constant.GET_ALL_PRODUCT,
     data: {
         res

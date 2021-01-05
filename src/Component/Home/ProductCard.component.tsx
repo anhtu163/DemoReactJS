@@ -6,7 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import {red} from '@material-ui/core/colors';
 import Button from "@material-ui/core/Button";
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+import { ProductCardProps } from '../../Container/ProductCard.container';
 
 
 const useStyles = makeStyles(() => ({
@@ -34,21 +35,22 @@ const useStyles = makeStyles(() => ({
         width: '250px',
     }
 }));
-function Alert(props) {
+
+function Alert(props: any) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
-export default function ProductCard(props) {
+export default function ProductCard(props: any) {
     const classes = useStyles();
     const data = props.data;
     const addToCart = props.st.addToCart;
-    const handleClick = (id) => {
+    const handleClick = (id: any) => {
         window.location.href = `/product-detail&id=${id}`;
 
     }
     const [open, setOpen] = React.useState(false);
 
 
-    const handleClose = (event, reason) => {
+    const handleClose = (event: any, reason: string) => {
         if (reason === 'clickaway') {
             return;
         }
