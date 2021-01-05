@@ -5,13 +5,17 @@ import '../../Style/Home/Home.style.css';
 import '../../Style/Container.style.css';
 import ProductCard from "./ProductCard.component";
 import Pagination from '@material-ui/lab/Pagination';
+import {HomeProps} from "../../Container/Home.container";
+import ProductCardContainer from "../../Container/ProductCard.container";
 
 
 
 
 
-export default class Home extends React.Component {
-    constructor(props) {
+export default class Home extends React.Component<HomeProps> {
+    private list : any;
+
+    constructor(props: HomeProps) {
         super(props);
         this.list = [];
 
@@ -32,7 +36,7 @@ export default class Home extends React.Component {
                 <Banner/>
                 <div className="line-divide"/>
                 <div className="product-list">
-                    { st.productsList ?  st.productsList.map(e => <ProductCard key={e.id} st={st} data = {e} />) : []}
+                    { st.productsList ?  st.productsList.map(e => <ProductCardContainer key={e.id} st={st} data = {e} />) : []}
                 </div>
                 <div className="page-list">
                     <Pagination className="pages" count={5} variant="outlined" shape="rounded" color="secondary"/>

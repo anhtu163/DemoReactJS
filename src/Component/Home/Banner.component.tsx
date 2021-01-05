@@ -3,22 +3,29 @@ import '../../Style/Home/Banner.style.css';
 import  '../../Style/Container.style.css';
 
 export default class Banner extends React.Component{
-    constructor(props) {
+
+    private listImg: string[];
+    private st : {
+        current: number,
+    }
+    private interval: any;
+
+    constructor(props: any) {
         super(props);
         this.listImg = ["https://cf.shopee.vn/file/b41b936d9796f84dae6a0e0f35edc389", "https://cf.shopee.vn/file/b2ae90e909680eccf27344fb8f2d57f9", "https://cf.shopee.vn/file/db967f3d3c48290131a6b4835c45817e"]
-        this.state = {
+        this.st = {
             current: 0,
         }
     }
     tick() {
-        if(this.state.current === 2){
+        if(this.st.current === 2){
             this.setState(state => ({
                 current: 0
             }));
         }
-        this.setState(state => ({
-            current: state.current + 1
-        }));
+        this.setState({
+            current: this.st.current + 1
+        });
     }
 
     componentDidMount() {
@@ -29,7 +36,7 @@ export default class Banner extends React.Component{
 
                 <div className="banner">
                     <div className="bannerLeft">
-                        <img alt="slide promotion" src={this.listImg[this.state.current]}/>
+                        <img alt="slide promotion" src={this.listImg[this.st.current]}/>
                     </div>
                     <div className="bannerRight">
                         <div><img alt="promotion" src="https://cf.shopee.vn/file/eaba2f3f50d58fb66d1b9711a02a8dd8_xhdpi"/></div>

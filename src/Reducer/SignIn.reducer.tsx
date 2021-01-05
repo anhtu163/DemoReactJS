@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as constant from "../Constant/constant";
 
-export type State = {
+export type SignInState = {
     username: string,
     password: string,
     token: string,
@@ -9,7 +9,7 @@ export type State = {
     isLogin: boolean,
 }
 
-const initialState : State = {
+const initialState : SignInState = {
     username: '',
     password: '',
     token: '',
@@ -17,7 +17,7 @@ const initialState : State = {
     isLogin: false,
 };
 
-const SignInReducer = (state:State = initialState, actions: { type: any; data: { res: { username: string; password: string; }; }; }): State => {
+const SignInReducer = (state:SignInState = initialState, actions: { type: any; data: { res: { username: string; password: string; }; }; }): SignInState => {
     switch (actions.type) {
         case constant.SIGN_IN:
             const st = {...state};
