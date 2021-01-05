@@ -1,11 +1,17 @@
 import * as constant from '../Constant/constant'
 
+
+export type CartState = {
+    cartItems: any[],
+    numberTotal: number,
+}
+
 const initialState = {
     cartItems: [],
     numberTotal: 0,
 }
 
-const CartReducer = (state = initialState, action) => {
+const CartReducer = (state = initialState, action: any): CartState => {
     switch (action.type) {
         case constant.CHANGE_CART_ITEM_COUNT:
         case constant.ADD_TO_CART:

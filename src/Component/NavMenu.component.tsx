@@ -12,12 +12,19 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import '../Style/NavMenu.style.css';
 import {Badge, Button} from "@material-ui/core";
+import {NavMenuProps} from "../Container/NavMenu.container";
 
-export default class NavMenu extends React.Component{
-    constructor(props) {
+export default class NavMenu extends React.Component<NavMenuProps>{
+
+    private st : {
+        anchorEl: any,
+        open: boolean,
+    }
+
+    constructor(props: NavMenuProps) {
         super(props);
 
-        this.state = {
+        this.st = {
             anchorEl: null,
             open : false,
         }
@@ -28,7 +35,7 @@ export default class NavMenu extends React.Component{
         const st = this.props;
 
 
-        const handleMenu = (event) => {
+        const handleMenu = (event: any) => {
             this.setState({anchorEl : event.currentTarget, open: true })
         };
 
@@ -97,7 +104,7 @@ export default class NavMenu extends React.Component{
 
                                 <Menu
                                     id="menu-appbar"
-                                    anchorEl={this.state.anchorEl}
+                                    anchorEl={this.st.anchorEl}
                                     anchorOrigin={{
                                         vertical: 'top',
                                         horizontal: 'right',
@@ -107,7 +114,7 @@ export default class NavMenu extends React.Component{
                                         vertical: 'top',
                                         horizontal: 'right',
                                     }}
-                                    open={this.state.open}
+                                    open={this.st.open}
                                     onClose={handleClose}
                                 >
                                     <MenuItem>Profile</MenuItem>
