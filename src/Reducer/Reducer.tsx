@@ -4,13 +4,14 @@ import HomeReducer, {HomeState} from "./Home.reducer";
 // @ts-ignore
 import ProductDetailReducer from "./ProductDetail.reducer";
 // @ts-ignore
-import CartReducer from "./Cart.reducer"
+import CartReducer, {CartState} from "./Cart.reducer"
 // @ts-ignore
 import CheckoutReducer from "./Checkout.reducer";
 
 export interface IRootState {
     SignInReducer: SignInState,
-    HomeReducer: HomeState
+    HomeReducer: HomeState,
+    CartReducer: CartState,
 }
 
 

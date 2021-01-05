@@ -4,10 +4,13 @@ import Subtotal from "./Subtotal.component";
 import {Card, Typography} from "@material-ui/core";
 import "../../Style/Container.style.css";
 import '../../Style/Cart/CartComponent.css'
+import {CartProps} from "../../Container/Cart.container";
 
-export default class Cart extends React.Component {
+export default class Cart extends React.Component<CartProps> {
 
-    constructor(props) {
+    private total: number;
+
+    constructor(props: CartProps) {
         super(props);
         this.total = 0;
     }
