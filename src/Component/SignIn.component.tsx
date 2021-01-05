@@ -6,6 +6,8 @@ import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import {SignInProps} from "../Container/SignIn.container";
+// @ts-ignore
 import { Redirect } from "react-router-dom";
 import '../Style/SignIn.style.css';
 import '../Style/Container.style.css';
@@ -13,44 +15,48 @@ import '../Style/Container.style.css';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-function Alert(props) {
+
+function Alert(props: any) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default class Signin extends React.Component {
+export default class SignIn extends React.Component<SignInProps> {
 
-    constructor(props) {
+    private username: string;
+    private password: string;
+    private err: string;
+    private open: boolean;
+
+
+    constructor(props: SignInProps) {
         super(props);
         this.username = '';
         this.password = '';
         this.err = '';
-        this.state = {
-            open: false,
-        }
+        this.open = false;
+
     }
 
-    handleClose = (event, reason) => {
+    handleClose = (event: any, reason: string) => {
         if (reason === 'clickaway') {
             return;
         }
 
-        this.setState({ open: false});
+        this.open = false;
     };
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-    }
 
     render() {
-        const st = this.props;
-        if (st.isLogin === true){
+        const st = this.props ;
+        if (st.isLogin){
             return (<Redirect to="/" />);
         }
 
 
         return (
             <div className="container">
-                <Snackbar open={this.state.open} autoHideDuration={3000} onClose={this.handleClose}>
-                    <Alert onClose={this.handleClose} severity="error">
+                <Snackbar open={this.open} autoHideDuration={3000} onClose={this.handleClose}>
+                    <Alert onClose={this.handleClose} severity="error" >
                         Username or Password is invalid!!
                     </Alert>
                 </Snackbar>
