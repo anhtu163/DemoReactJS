@@ -14,11 +14,14 @@ import Button from "@material-ui/core/Button";
 import '../../Style/Container.style.css';
 import CheckoutProduct from "./CheckoutProduct.component";
 import {Alert} from "@material-ui/lab";
+import {CheckOutProps} from "../../Container/CheckOut.container";
 
+export default class Checkout extends React.Component<CheckOutProps> {
 
-export default class Checkout extends React.Component {
+    private total: number;
+    state: any;
 
-    constructor(props) {
+    constructor(props: CheckOutProps) {
         super(props);
         this.total = 0;
         this.state = {
@@ -40,21 +43,21 @@ export default class Checkout extends React.Component {
         }
     }
 
-    onPayMethodChanged = (e) => {
+    onPayMethodChanged = (e: any) => {
         this.setState({
             payMethod: e.target.value
         });
     }
 
-    onChangeName = (e) => {
+    onChangeName = (e: any) => {
         this.setState({name: e.target.value});
     }
 
-    onChangeAddress = (e) => {
+    onChangeAddress = (e: any) => {
         this.setState({address: e.target.value});
     }
 
-    onChangePhoneNumber = (e) => {
+    onChangePhoneNumber = (e: any) => {
         this.setState({phoneNumber: e.target.value});
     }
 
@@ -66,7 +69,6 @@ export default class Checkout extends React.Component {
             phoneNumber
         } = this.state;
         let hasError = this.validate(name, address, phoneNumber);
-        console.log(hasError);
         if (hasError.isNameError || hasError.isAddressError || hasError.isPhoneNumberError) {
             this.setState({errors: hasError});
             return;
@@ -76,8 +78,8 @@ export default class Checkout extends React.Component {
         window.location.href="/success-checkout";
     }
 
-    validate = (name, address, phoneNumber) => {
-        const errors = {};
+    validate = (name: string, address: string, phoneNumber: string) => {
+        const errors:any = {};
         if (name.length === 0) {
             errors.isNameError = true;
         }
@@ -90,7 +92,7 @@ export default class Checkout extends React.Component {
         return errors;
     }
 
-    isVietnamesePhoneNumber = (number) => {
+    isVietnamesePhoneNumber = (number: string) => {
         return /(03|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(number);
     }
 

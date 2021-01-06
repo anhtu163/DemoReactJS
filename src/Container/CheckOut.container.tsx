@@ -1,10 +1,10 @@
 import {connect, ConnectedProps} from "react-redux"
-import Cart from "../Component/Cart/Cart.component";
-import {changeCartItemCountRequest, getCartItemsRequest, removeFromCartRequest} from "../Action/Cart.action";
+import {getCartItemsRequest} from "../Action/Cart.action";
+import Checkout from "../Component/Checkout/Checkout.component";
+import {setOrder} from "../Action/Checkout.action";
 import {IRootState} from "../Reducer/Reducer";
 import {ThunkDispatch} from "redux-thunk";
 import {compose} from "redux";
-
 const mapStateToProps = (state: IRootState) => {
     return {
         isLogin: state.SignInReducer.isLogin,
@@ -16,8 +16,9 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<IRootState, any, any>) => {
         getCartItems: () => {
             dispatch(getCartItemsRequest())
         },
-        removeFromCart: (product: any) => dispatch(removeFromCartRequest(product)),
-        changeCartItemCount: (product: any, count: number) => dispatch(changeCartItemCountRequest(product, count))
+        setOrder: (order: any) => {
+            dispatch(setOrder(order))
+        }
     }
 }
 
@@ -27,8 +28,8 @@ const connector = connect(
 );
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
-export type CartProps = PropsFromRedux;
+export type CheckOutProps = PropsFromRedux;
 
-const CartContainer =  compose(connector)(Cart);
+const CheckOutContainer = compose(connector)(Checkout)
 
-export default CartContainer;
+export default CheckOutContainer;

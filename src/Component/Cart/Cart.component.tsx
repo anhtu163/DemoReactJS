@@ -6,6 +6,7 @@ import "../../Style/Container.style.css";
 import '../../Style/Cart/CartComponent.css'
 import {CartProps} from "../../Container/Cart.container";
 
+
 export default class Cart extends React.Component<CartProps> {
 
     private total: number;
