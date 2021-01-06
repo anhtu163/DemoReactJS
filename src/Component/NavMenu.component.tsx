@@ -16,7 +16,7 @@ import {NavMenuProps} from "../Container/NavMenu.container";
 
 export default class NavMenu extends React.Component<NavMenuProps>{
 
-    private st : {
+    state : {
         anchorEl: any,
         open: boolean,
     }
@@ -24,7 +24,7 @@ export default class NavMenu extends React.Component<NavMenuProps>{
     constructor(props: NavMenuProps) {
         super(props);
 
-        this.st = {
+        this.state = {
             anchorEl: null,
             open : false,
         }
@@ -104,7 +104,7 @@ export default class NavMenu extends React.Component<NavMenuProps>{
 
                                 <Menu
                                     id="menu-appbar"
-                                    anchorEl={this.st.anchorEl}
+                                    anchorEl={this.state.anchorEl}
                                     anchorOrigin={{
                                         vertical: 'top',
                                         horizontal: 'right',
@@ -114,7 +114,7 @@ export default class NavMenu extends React.Component<NavMenuProps>{
                                         vertical: 'top',
                                         horizontal: 'right',
                                     }}
-                                    open={this.st.open}
+                                    open={this.state.open}
                                     onClose={handleClose}
                                 >
                                     <MenuItem>Profile</MenuItem>
