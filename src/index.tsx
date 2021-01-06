@@ -7,6 +7,7 @@ import {applyMiddleware, createStore} from "redux";
 import Reducer from "./Reducer/Reducer";
 import {Provider} from "react-redux";
 import Container from "./Container/Container";
+// @ts-ignore
 import throttle from "lodash/throttle";
 
 
@@ -24,7 +25,7 @@ const loadState = () => {
     }
 };
 
-const saveState = (state) => {
+const saveState = (state: any) => {
     try {
         const serializedState = JSON.stringify(state);
 
