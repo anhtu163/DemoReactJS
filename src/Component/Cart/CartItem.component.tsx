@@ -10,11 +10,11 @@ import Typography from "@material-ui/core/Typography";
 
 
 
-export default function CartItem(props) {
+export default function CartItem(props: any) {
     const data = props.data;
     const st = props.st;
 
-    const remove = (index) => {
+    const remove = (index: number) : any => {
         st.removeFromCart(index);
     }
 
@@ -51,10 +51,7 @@ export default function CartItem(props) {
                         </div>
                     </div>
                     <div className="cart-delete-button">
-                        <IconButton onClick={() => remove(props.index)}
-                                    variant="contained"
-                                    size="medium"
-                                    style={{color: 'white', backgroundColor: 'orangered', alignItems: 'center'}}>
+                        <IconButton onClick={() => remove(props.index)} style={{color: 'white', backgroundColor: 'orangered', alignItems: 'center'}}>
                             <DeleteIcon fontSize="small"/>
                         </IconButton>
                     </div>
