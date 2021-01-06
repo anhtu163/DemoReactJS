@@ -2,17 +2,17 @@ import * as constant from '../Constant/constant'
 
 //ADD TO CART
 
-function onClickAddProductToCart(product) {
+function onClickAddProductToCart(product: any) {
     //xu ly event click, nhan du lieu tu nguoi dung, goi api, tra ve response
     //get va set localStorage
     //tra ve cartItems
     //return list
-    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    let cartItems = JSON.parse(localStorage.getItem("cartItems") as string);
     if (cartItems === null) {
         cartItems = [];
     }
     let alreadyExists = false;
-    cartItems.forEach((item) => {
+    cartItems.forEach((item: any) => {
         if (item.id === product.id) {
             alreadyExists = true;
             item.count++;
@@ -31,15 +31,15 @@ function onClickAddProductToCart(product) {
 // which means we can alter our dispatched actions before
 // they get to the reducers or execute some code during the dispatch.
 
-export const addToCartRequest = (product) => {
-    return dispatch => {
+export const addToCartRequest = (product: any) => {
+    return (dispatch: any) => {
         const list = onClickAddProductToCart(product);
         return dispatch(addToCart(list));
     }
 }
 
 //dispatch
-export const addToCart = (res) => ({
+export const addToCart = (res: any) => ({
     type: constant.ADD_TO_CART,
     payload: {
         res,
@@ -49,22 +49,22 @@ export const addToCart = (res) => ({
 
 //REMOVE FROM CART
 
-function onClickRemoveProductFromCart(index) {
-    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+function onClickRemoveProductFromCart(index: any) {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems") as string);
     cartItems.splice(index, 1);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     return cartItems;
 }
 
-export const removeFromCartRequest = (product) => {
-    return dispatch => {
+export const removeFromCartRequest = (product: any) => {
+    return (dispatch: any) => {
         const list = onClickRemoveProductFromCart(product);
         return dispatch(removeFromCart(list));
     }
 }
 
 
-export const removeFromCart = (res) => ({
+export const removeFromCart = (res: any) => ({
     type: constant.REMOVE_FROM_CART,
     payload: {
         res,
@@ -75,17 +75,17 @@ export const removeFromCart = (res) => ({
 //props getCartItemsRequest duoc goi, sau khi duoc goi thi goi toi fetchCartItem de lay data
 //sau khi co data goi dispatch truyen action kem data vua nhan duoc cho reducer
 function fetchCartItems() {
-    return JSON.parse(localStorage.getItem("cartItems"));
+    return JSON.parse(localStorage.getItem("cartItems") as string);
 }
 
 export const getCartItemsRequest = () => {
-    return dispatch => {
+    return (dispatch : any) => {
         const cartItems = fetchCartItems();
         return dispatch(getCartItems(cartItems));
     }
 }
 
-export const getCartItems = res => ({
+export const getCartItems = (res: any) => ({
     type: constant.GET_CART_ITEMS,
     payload: {
         res
@@ -94,21 +94,21 @@ export const getCartItems = res => ({
 
 //CHANGE QUANTITY
 
-function onClickChangeCartItemCount(index, count) {
-    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+function onClickChangeCartItemCount(index: number, count: any) {
+    let cartItems = JSON.parse(localStorage.getItem("cartItems") as string);
     cartItems[index].count = count;
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     return cartItems;
 }
 
-export const changeCartItemCountRequest = (product, count) => {
-    return dispatch => {
+export const changeCartItemCountRequest = (product: any, count: number) => {
+    return (dispatch: any) => {
         const list = onClickChangeCartItemCount(product, count);
         return dispatch(changeCartItemCount(list));
     }
 }
 
-export const changeCartItemCount = res => ({
+export const changeCartItemCount = (res: any) => ({
     type: constant.CHANGE_CART_ITEM_COUNT,
     payload: {
         res
@@ -117,16 +117,16 @@ export const changeCartItemCount = res => ({
 
 // ADD PRODUCT TO CART FROM DETAIL
 
-function onClickAddProductToCartFromDetail(product, count) {
+function onClickAddProductToCartFromDetail(product: any, count: number) {
 
     console.log('product: ' + product);
     console.log('count: '+ count);
-    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    let cartItems = JSON.parse(localStorage.getItem("cartItems") as string);
     if (cartItems === null) {
         cartItems = [];
     }
     let alreadyExists = false;
-    cartItems.forEach((item) => {
+    cartItems.forEach((item: any) => {
         if (item.id === product.id) {
             alreadyExists = true;
             item.count = item.count + count;
@@ -140,15 +140,15 @@ function onClickAddProductToCartFromDetail(product, count) {
 }
 
 
-export const addToCartFromDetailRequest = (product, count) => {
-    return dispatch => {
+export const addToCartFromDetailRequest = (product: any, count: number) => {
+    return (dispatch: any) => {
         const list = onClickAddProductToCartFromDetail(product, count);
         return dispatch(addToCartFromDetail(list));
     }
 }
 
 //dispatch
-export const addToCartFromDetail = (res) => ({
+export const addToCartFromDetail = (res : any) => ({
     type: constant.ADD_TO_CART_FROM_DETAIL,
     payload: {
         res,
