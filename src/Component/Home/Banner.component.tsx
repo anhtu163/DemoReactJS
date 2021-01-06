@@ -5,7 +5,7 @@ import  '../../Style/Container.style.css';
 export default class Banner extends React.Component<any>{
 
     private readonly listImg: string[];
-    public state: {
+    state: {
         current: number,
     };
     private interval: any;
