@@ -1,10 +1,14 @@
 import * as constant from '../Constant/constant'
 
-const initialState = {
-    order : {}
+export type CheckoutState = {
+    order : any
 }
 
-const CheckoutReducer = (state = initialState, action) => {
+const initialState = {
+    order: {}
+}
+
+const CheckoutReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case constant.SET_ORDER:

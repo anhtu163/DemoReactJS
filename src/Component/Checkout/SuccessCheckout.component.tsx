@@ -4,14 +4,17 @@ import "../../Style/Container.style.css";
 import CheckoutProduct from "./CheckoutProduct.component";
 import '../../Style/Checkout/CheckoutComponent.css';
 import MuiAlert from '@material-ui/lab/Alert';
+import {SuccessCheckoutProps} from "../../Container/SuccessCheckout.container";
 
-function Alert(props) {
+function Alert(props: any) {
     return <MuiAlert style={{width: '100%'}} elevation={6} variant="filled" {...props} />;
 }
 
-export default class SuccessCheckout extends React.Component{
+export default class SuccessCheckout extends React.Component<SuccessCheckoutProps>{
 
-    constructor(props) {
+    private total: number;
+
+    constructor(props: SuccessCheckoutProps) {
         super(props);
         this.total = 0;
     }
@@ -25,7 +28,7 @@ export default class SuccessCheckout extends React.Component{
         }
         const orderList = st.order.orderItems;
         if (orderList.length !== 0) {
-            orderList.forEach(e => {
+            orderList.forEach((e:any) => {
                 this.total = this.total + (e.count * e.price);
             })
         }
@@ -43,7 +46,7 @@ export default class SuccessCheckout extends React.Component{
                                 <div className="line-divide"/>
                             </CardContent>
                             <CardContent className="checkout-info-wrapper">
-                                {orderList && orderList.map(e => (
+                                {orderList && orderList.map((e:any) => (
                                     <CheckoutProduct key={e.id} data={e}/>
                                 ))}
                             </CardContent>

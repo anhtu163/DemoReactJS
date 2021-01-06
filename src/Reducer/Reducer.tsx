@@ -2,16 +2,19 @@ import {combineReducers} from "redux";
 import SignInReducer, {SignInState} from "./SignIn.reducer";
 import HomeReducer, {HomeState} from "./Home.reducer";
 // @ts-ignore
-import ProductDetailReducer from "./ProductDetail.reducer";
+import ProductDetailReducer, {ProductDetailState} from "./ProductDetail.reducer";
 // @ts-ignore
 import CartReducer, {CartState} from "./Cart.reducer"
 // @ts-ignore
-import CheckoutReducer from "./Checkout.reducer";
+import CheckoutReducer, {CheckoutState} from "./Checkout.reducer";
 
 export interface IRootState {
     SignInReducer: SignInState,
     HomeReducer: HomeState,
     CartReducer: CartState,
+    CheckoutReducer: CheckoutState,
+    ProductDetailReducer: ProductDetailState
+
 }
 
 

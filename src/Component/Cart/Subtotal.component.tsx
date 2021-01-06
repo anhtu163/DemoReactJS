@@ -4,10 +4,10 @@ import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Typography from "@material-ui/core/Typography";
 
-export default class Subtotal extends React.Component {
+export default function Subtotal (props: any) {
 
-    render() {
-        const cartItems = this.props.cartItems;
+
+        const cartItems = props.cartItems;
         let myCart = cartItems ? [...cartItems]: [];
         const sum = myCart.reduce(((sum, item) => sum + item.price * item.count), 0);
         return (
@@ -23,5 +23,5 @@ export default class Subtotal extends React.Component {
                 </Button>
             </div>
         )
-    }
+
 }

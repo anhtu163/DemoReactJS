@@ -5,7 +5,7 @@ import '../../Style/Container.style.css';
 import {Card} from "@material-ui/core";
 
 
-export default function CheckoutProduct(props) {
+export default function CheckoutProduct(props: any) {
 
     const data = props.data;
 
