@@ -3,7 +3,6 @@ import React from 'react';
 import Banner from "./Banner.component";
 import '../../Style/Home/Home.style.css';
 import '../../Style/Container.style.css';
-import ProductCard from "./ProductCard.component";
 import Pagination from '@material-ui/lab/Pagination';
 import {HomeProps} from "../../Container/Home.container";
 import ProductCardContainer from "../../Container/ProductCard.container";

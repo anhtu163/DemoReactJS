@@ -1,10 +1,14 @@
 import * as constant from "../Constant/constant";
 
+export type ProductDetailState = {
+    dataDetail: any
+}
+
 const initialState = {
     dataDetail: {}
 };
 
-const ProductDetailReducer = (state = initialState, actions) => {
+const ProductDetailReducer = (state = initialState, actions:any) => {
     switch (actions.type) {
         case constant.GET_DETAIL_PRODUCT:
             const st = {...state};
