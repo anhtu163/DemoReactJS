@@ -30,7 +30,7 @@ export default function CartItem(props: any) {
                     </div>
                     <div className="name-price">
                         <div className="name-count">
-                           
+                            <Typography style={{marginBottom: '10px'}} variant="h6">{data.name}</Typography>
                             <ButtonGroup color="primary" aria-label="outlined primary button group">
                                 <Button onClick={() => {
                                     if (data.count > 1) {
