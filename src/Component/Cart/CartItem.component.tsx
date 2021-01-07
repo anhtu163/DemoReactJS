@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Style/Cart/CartItemComponent.css'
+import '../../Style/Cart/CartItemComponent.scss'
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from "@material-ui/core/IconButton";
 import ButtonGroup from "@material-ui/core/ButtonGroup";

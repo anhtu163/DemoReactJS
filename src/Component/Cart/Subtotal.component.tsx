@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Style/SubtotalComponent.css'
+import '../../Style/SubtotalComponent.scss'
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Typography from "@material-ui/core/Typography";

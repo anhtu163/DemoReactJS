@@ -2,8 +2,8 @@ import React from 'react';
 import CartList from "./CartList.component";
 import Subtotal from "./Subtotal.component";
 import {Card, Typography} from "@material-ui/core";
-import "../../Style/Container.style.css";
-import '../../Style/Cart/CartComponent.css'
+import "../../Style/Container.style.scss";
+import '../../Style/Cart/CartComponent.scss'
 import {CartProps} from "../../Container/Cart.container";
 
 

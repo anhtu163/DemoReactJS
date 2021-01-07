@@ -9,9 +9,9 @@ import {
     RadioGroup,
     TextField, Typography
 } from "@material-ui/core";
-import '../../Style/Checkout/CheckoutComponent.css'
+import '../../Style/Checkout/CheckoutComponent.scss'
 import Button from "@material-ui/core/Button";
-import '../../Style/Container.style.css';
+import '../../Style/Container.style.scss';
 import CheckoutProduct from "./CheckoutProduct.component";
 import {Alert} from "@material-ui/lab";
 import {CheckOutProps} from "../../Container/CheckOut.container";

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, Typography, Link, CardActions, Button} from "@material-ui/core";
-import "../../Style/Container.style.css";
+import "../../Style/Container.style.scss";
 import CheckoutProduct from "./CheckoutProduct.component";
-import '../../Style/Checkout/CheckoutComponent.css';
+import '../../Style/Checkout/CheckoutComponent.scss';
 import MuiAlert from '@material-ui/lab/Alert';
 import {SuccessCheckoutProps} from "../../Container/SuccessCheckout.container";
 

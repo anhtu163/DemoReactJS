@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../Style/Container.style.css';
-import '../../Style/Product/ProductDetail.style.css';
+import '../../Style/Container.style.scss';
+import '../../Style/Product/ProductDetail.style.scss';
 import {Button, Typography, Chip} from "@material-ui/core";
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import CheckIcon from "@material-ui/icons/Check";

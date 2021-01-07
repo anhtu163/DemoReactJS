@@ -1,5 +1,5 @@
 import React from 'react';
-import "../Style/Container.style.css";
+import "../Style/Container.style.scss";
 
 export default class Component extends React.PureComponent {
     render() {

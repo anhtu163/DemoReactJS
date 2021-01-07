@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../Style/Home/Banner.style.css';
-import  '../../Style/Container.style.css';
+import '../../Style/Home/Banner.style.scss';
+import  '../../Style/Container.style.scss';
 
 export default class Banner extends React.Component<any>{
 

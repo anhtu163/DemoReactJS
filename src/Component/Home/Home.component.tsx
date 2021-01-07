@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Banner from "./Banner.component";
-import '../../Style/Home/Home.style.css';
-import '../../Style/Container.style.css';
+import '../../Style/Home/Home.style.scss';
+import '../../Style/Container.style.scss';
 import Pagination from '@material-ui/lab/Pagination';
 import {HomeProps} from "../../Container/Home.container";
 import ProductCardContainer from "../../Container/ProductCard.container";

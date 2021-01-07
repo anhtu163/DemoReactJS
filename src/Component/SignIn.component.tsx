@@ -9,9 +9,9 @@ import Container from "@material-ui/core/Container";
 import {SignInProps} from "../Container/SignIn.container";
 // @ts-ignore
 import { Redirect } from "react-router-dom";
-import '../Style/SignIn.style.css';
-import '../Style/Container.style.css';
-import '../Style/Container.style.css';
+import '../Style/SignIn.style.scss';
+import '../Style/Container.style.scss';
+import '../Style/Container.style.scss';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 

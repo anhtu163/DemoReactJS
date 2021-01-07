@@ -10,7 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import '../Style/NavMenu.style.css';
+import '../Style/NavMenu.style.scss';
 import {Badge, Button} from "@material-ui/core";
 import {NavMenuProps} from "../Container/NavMenu.container";
 

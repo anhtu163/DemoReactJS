@@ -1,7 +1,7 @@
 import React from 'react';
 
-import '../../Style/Checkout/CheckoutProduct.style.css';
-import '../../Style/Container.style.css';
+import '../../Style/Checkout/CheckoutProduct.style.scss';
+import '../../Style/Container.style.scss';
 import {Card} from "@material-ui/core";
 
 
