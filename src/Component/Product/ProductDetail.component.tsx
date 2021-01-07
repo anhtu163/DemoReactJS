@@ -9,17 +9,29 @@ import Coupon from "./Coupon.component";
 import {Add, Remove} from "@material-ui/icons";
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import {ProductDetailProps} from "../../Container/ProductDetail.container";
+import { RouteComponentProps } from "react-router-dom";
 
+interface RouteParams {
+    id: string
+}
 
-function Alert(props) {
+interface IProductDetail extends RouteComponentProps<RouteParams> {
+}
+
+function Alert(props: any) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default class ProductDetail extends React.Component{
-    constructor(props) {
+export default class ProductDetail extends React.Component<ProductDetailProps & IProductDetail>{
+
+    private data: any;
+    state: any;
+    id: any;
+
+    constructor(props: ProductDetailProps & IProductDetail) {
         super(props);
-        const prs = this.props;
-        this.id = prs.match.params.id;
+        this.id = this.props.match.params.id;
         this.state = {
             count: 0,
             value: 2,
@@ -43,7 +55,7 @@ export default class ProductDetail extends React.Component{
 
     };
 
-    handleClose = (event, reason) => {
+    handleClose = (event: any, reason: string) => {
         if (reason === 'clickaway') {
             return;
         }
@@ -54,7 +66,6 @@ export default class ProductDetail extends React.Component{
     render() {
         //const data = this.list.filter (e => e.id === parseInt(this.id,10))[0];
         const st = this.props;
-        console.log(this.state.count)
         return(
             <div className="container">
                 <Snackbar open={this.state.open} autoHideDuration={3000} onClose={this.handleClose}>
