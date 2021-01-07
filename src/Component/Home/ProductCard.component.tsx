@@ -6,8 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import {red} from '@material-ui/core/colors';
 import Button from "@material-ui/core/Button";
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
-import { ProductCardProps } from '../../Container/ProductCard.container';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
 const useStyles = makeStyles(() => ({

@@ -26,10 +26,11 @@ export default function Coupon() {
             <CardActionArea>
                 <CardContent>
                     <Typography component="h5">
-                        Mã giảm 10%
+                        Mã giảm 10
                     </Typography>
                     <div className="line-divide"/>
-                    <Typography variant="h7" component="h8">
+                    {/*<Typography>  variant="h7" component="h8">*/}
+                    <Typography variant="subtitle2"  component="h5">
                         Giảm tối đa 25.000 cho đơn hàng từ 100.000
                     </Typography>
                 </CardContent>
